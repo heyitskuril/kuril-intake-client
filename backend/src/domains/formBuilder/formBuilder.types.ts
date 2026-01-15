@@ -1,0 +1,27 @@
+import { FieldType } from '@prisma/client';
+
+export interface CreateFormFieldPayload {
+  field_name: string;
+  field_label: string;
+  field_type: FieldType;
+  placeholder?: string;
+  help_text?: string;
+  is_required?: boolean;
+  options?: string[];
+  validation_rules?: Record<string, any>;
+  display_order?: number;
+  is_active?: boolean;
+}
+
+export interface UpdateFormFieldPayload {
+  field_name?: string;
+  field_label?: string;
+  field_type?: FieldType;
+  placeholder?: string;
+  help_text?: string;
+  is_required?: boolean;
+  options?: string[];
+  validation_rules?: Record<string, any>;
+  display_order?: number;
+  is_active?: boolean;
+}

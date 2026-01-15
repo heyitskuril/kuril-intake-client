@@ -4,52 +4,137 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@layer base {
-  * {
-  }
-  body {
-    @apply bg-gray-50 text-gray-900 antialiased;
-  }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-@layer components {
-  .btn {
-    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
-  }
-  
-  .btn-primary {
-    @apply bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800;
-  }
-  
-  .btn-secondary {
-    @apply bg-gray-200 text-gray-800 hover:bg-gray-300 active:bg-gray-400;
-  }
-  
-  .btn-danger {
-    @apply bg-red-600 text-white hover:bg-red-700 active:bg-red-800;
-  }
-  
-  .input {
-    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all;
-  }
-  
-  .card {
-    @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6;
-  }
-  
-  .badge {
-    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
-  }
-  
-  .badge-new {
-    @apply bg-blue-100 text-blue-800;
-  }
-  
-  .badge-reviewed {
-    @apply bg-yellow-100 text-yellow-800;
-  }
-  
-  .badge-closed {
-    @apply bg-green-100 text-green-800;
-  }
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Font smoothing */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus styles */
+*:focus-visible {
+  @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+}
+
+/* Custom
+animations */
+@keyframes fadeIn {
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+@keyframes slideInUp {
+from {
+transform: translateY(10px);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
+}
+.animate-fadeIn {
+animation: fadeIn 0.3s ease-in-out;
+}
+.animate-slideInUp {
+animation: slideInUp 0.3s ease-in-out;
+}
+/* Loading spinner */
+.spinner {
+border: 3px solid rgba(0, 0, 0, 0.1);
+border-left-color: #3b82f6;
+border-radius: 50%;
+width: 40px;
+height: 40px;
+animation: spin 1s linear infinite;
+}
+@keyframes spin {
+to {
+transform: rotate(360deg);
+}
+}
+/* Print styles */
+@media print {
+.no-print {
+display: none !important;
+}
+}
+/* Utility classes */
+.text-balance {
+text-wrap: balance;
+}
+.line-clamp-2 {
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
+.line-clamp-3 {
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
+/* Transitions */
+.transition-colors {
+transition-property: color, background-color, border-color;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration: 150ms;
+}
+.transition-all {
+transition-property: all;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration: 150ms;
+}
+/* Form improvements */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+input[type='number'] {
+-moz-appearance: textfield;
+}
+/* Custom checkbox/radio */
+input[type='checkbox'],
+input[type='radio'] {
+@apply cursor-pointer;
+}
+/* Disabled state */
+:disabled {
+@apply cursor-not-allowed opacity-50;
+}
+/* Selection */
+::selection {
+@apply bg-primary-200 text-primary-900;
+}
+
+/* Dark mode support (future) */
+@media (prefers-color-scheme: dark) {
+  /* Add dark mode styles here if needed */
 }

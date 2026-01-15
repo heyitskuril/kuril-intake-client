@@ -1,766 +1,787 @@
-# 🚀 Kuril Intake Client
+# 🔥 Intaku
+### A Modern Business Intake & Client Management Platform
 
-> **Full-Stack Client Intake Management System**  
-> Production-ready PERN stack application for managing client inquiries and submissions
+<div align="center">
 
-[![Node.js](https://img.shields.io/badge/Node.js-18.x-green.svg)](https://nodejs.org/)
-[![React](https://img.shields.io/badge/React-18.x-61dafb.svg)](https://reactjs.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14+-336791.svg)](https://www.postgresql.org/)
-[![Express](https://img.shields.io/badge/Express-4.18-blue.svg)](https://expressjs.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+**Transform client inquiries into structured workflows with your own branded intake portal**
+
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)](https://www.prisma.io/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+
+[Features](#-key-features) • [Demo](#-demo) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Architecture](#-architecture)
+
+</div>
 
 ---
 
 ## 📋 Table of Contents
 
-- [Overview](#-overview)
-- [Features](#-features)
+- [What is Intaku?](#-what-is-intaku)
+- [The Problem & Solution](#-the-problem--solution)
+- [Key Features](#-key-features)
 - [Demo](#-demo)
-- [Tech Stack](#-tech-stack)
-- [System Architecture](#-system-architecture)
+- [Technology Stack](#-technology-stack)
+- [Architecture](#-architecture)
 - [Quick Start](#-quick-start)
 - [Project Structure](#-project-structure)
-- [Documentation](#-documentation)
-- [Development](#-development)
-- [Deployment](#-deployment)
 - [API Documentation](#-api-documentation)
-- [Screenshots](#-screenshots)
-- [Contributing](#-contributing)
+- [Deployment](#-deployment)
 - [Roadmap](#-roadmap)
+- [Contributing](#-contributing)
 - [License](#-license)
-- [Support](#-support)
-- [Acknowledgments](#-acknowledgments)
+- [About the Developer](#-about-the-developer)
 
 ---
 
-## 🎯 Overview
+## 🎯 What is Intaku?
 
-**Kuril Intake Client** adalah sistem manajemen intake form modern yang memudahkan bisnis untuk menerima dan mengelola inquiry dari potential clients. Dibangun dengan PERN stack (PostgreSQL, Express, React, Node.js) dengan fokus pada **production-ready**, **scalable**, dan **developer-friendly**.
+**Intaku** is a modern, production-grade platform that helps solo developers, freelancers, and small agencies manage client inquiries professionally. Think of it as **"Linktree for Business Intake"** — a single public link that transforms chaotic client requests into structured, actionable data. Intaku is a production-grade intake system designed first for personal use, with a clear path toward multi-tenant SaaS.
 
-### 🎬 Use Cases:
-
-- **Digital Agencies** - Manage project inquiries from potential clients
-- **Consulting Firms** - Track consultation requests and follow-ups
-- **Service Businesses** - Handle service inquiries and bookings
-- **SaaS Companies** - Manage demo requests and sales leads
-- **Freelancers** - Professional intake form for client projects
-- **Startups** - Quick setup for client inquiry management
-
-### 💡 Why Kuril Intake Client?
-
-- ✅ **Zero Setup for Clients** - No registration/login required for submission
-- ✅ **Powerful Admin Dashboard** - Secure, JWT-protected management interface
-- ✅ **Production Ready** - Security best practices, error handling, validation
-- ✅ **Modern Tech Stack** - Latest technologies with great DX
-- ✅ **Easy to Deploy** - Multiple deployment options (Docker, VPS, Cloud)
-- ✅ **Fully Documented** - Comprehensive docs for every component
-- ✅ **Responsive Design** - Mobile-first, works on all devices
-- ✅ **Scalable Architecture** - Clean separation, easy to extend
-
----
-
-## ✨ Features
-
-### 🌐 Public Features (No Authentication):
-
-- **Intake Form Submission**
-  - Clean, professional form design
-  - Real-time client-side validation
-  - Service type selection
-  - Budget range tracking
-  - Attachment URL support
-  - Success/error feedback with toast notifications
-  - Mobile responsive design
-
-### 🔐 Admin Features (JWT Protected):
-
-- **Authentication System**
-  - Secure JWT-based login
-  - Token expiration & refresh
-  - Password hashing with bcrypt
-  - Auto-logout on token expiry
-  - Protected routes
-
-- **Dashboard Overview**
-  - Real-time statistics (total, new, reviewed, closed)
-  - Recent submissions preview
-  - Quick action cards
-  - Completion rate tracking
-  - Visual status indicators
-
-- **Intake Management**
-  - List all submissions with pagination
-  - Search functionality (name, email, service)
-  - Filter by status (new, reviewed, closed)
-  - View detailed submission info
-  - Update submission status
-  - Delete submissions
-  - Responsive table view
-
-- **Submission Details**
-  - Full contact information
-  - Project requirements
-  - Budget information
-  - Attachment links
-  - Status management
-  - Quick actions (email, call)
-  - Submission metadata
-
-### 🔧 Technical Features:
-
-**Backend:**
-- RESTful API with Express.js
-- PostgreSQL database with Prisma ORM
-- JWT authentication & authorization
-- Bcrypt password hashing
-- CORS & Helmet security
-- Input validation & sanitization
-- Comprehensive error handling
-- Request/response logging
-- Graceful shutdown
-- Environment-based configuration
-
-**Frontend:**
-- React 18 with modern hooks
-- Vite for blazing-fast dev server
-- TanStack Query (React Query) for server state
-- Zustand for client state management
-- React Hook Form for form handling
-- React Router 6 for navigation
-- Tailwind CSS for styling
-- Axios with interceptors
-- Toast notifications
-- Responsive design (mobile-first)
-- Loading & error states
-- Optimistic UI updates
-
----
-
-## 🎥 Demo
-
-### Live Demo:
-- **Public Form**: [https://kuril-intake.vercel.app](https://kuril-intake.vercel.app)
-- **Admin Dashboard**: [https://kuril-intake.vercel.app/admin](https://kuril-intake.vercel.app/admin)
-
-### Demo Credentials:
-```
-Email: admin@kuril.com
-Password: admin123
-```
-
----
-
-## 🛠 Tech Stack
-
-### Frontend
-
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **React** | 18.x | UI library |
-| **Vite** | 5.x | Build tool & dev server |
-| **React Router** | 6.x | Client-side routing |
-| **TanStack Query** | 5.x | Server state management |
-| **Zustand** | 4.x | Client state management |
-| **Axios** | 1.x | HTTP client |
-| **React Hook Form** | 7.x | Form handling |
-| **Tailwind CSS** | 3.x | Utility-first CSS |
-| **Lucide React** | 0.x | Icon library |
-| **date-fns** | 3.x | Date formatting |
-
-### Backend
-
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **Node.js** | 18.x+ | JavaScript runtime |
-| **Express.js** | 4.18+ | Web framework |
-| **PostgreSQL** | 14+ | Relational database |
-| **Prisma ORM** | 5.x | Database ORM & migrations |
-| **bcrypt** | 5.x | Password hashing |
-| **jsonwebtoken** | 9.x | JWT authentication |
-| **Helmet** | 7.x | Security headers |
-| **CORS** | 2.x | Cross-origin handling |
-| **dotenv** | 16.x | Environment variables |
-
-### DevOps & Tools
-
-- **Docker** - Containerization
-- **PM2** - Process management
-- **Nginx** - Reverse proxy
-- **Git** - Version control
-- **Postman** - API testing
-- **Prisma Studio** - Database GUI
-
----
-
-## 🏗 System Architecture
+### 🌟 Core Concept
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                         CLIENT LAYER                             │
-│                                                                  │
-│  ┌──────────────────────┐         ┌─────────────────────────┐  │
-│  │   PUBLIC WEB APP     │         │   ADMIN DASHBOARD       │  │
-│  │  (React + Vite)      │         │  (React + Vite)         │  │
-│  │                      │         │                         │  │
-│  │  - Intake Form       │         │  - Statistics           │  │
-│  │  - Validation        │         │  - Intake List          │  │
-│  │  - Toast Feedback    │         │  - Detail View          │  │
-│  │                      │         │  - Status Management    │  │
-│  └──────────┬───────────┘         └─────────┬───────────────┘  │
-│             │                               │                   │
-└─────────────┼───────────────────────────────┼───────────────────┘
-              │                               │
-              │      HTTP/HTTPS               │
-              │                               │
-       ┌──────▼───────────────────────────────▼──────┐
-       │          REVERSE PROXY (Nginx)              │
-       │  - SSL/TLS Termination                      │
-       │  - Load Balancing                           │
-       │  - Static File Serving                      │
-       └──────┬──────────────────────────────────────┘
-              │
-       ┌──────▼──────────────────────────────────────┐
-       │          API GATEWAY / ROUTER                │
-       │           (Express.js)                       │
-       │                                              │
-       │  ┌────────────────────────────────────────┐ │
-       │  │      MIDDLEWARE LAYER                  │ │
-       │  │  - CORS Handler                        │ │
-       │  │  - Security Headers (Helmet)           │ │
-       │  │  - Body Parser                         │ │
-       │  │  - JWT Verification                    │ │
-       │  │  - Error Handler                       │ │
-       │  │  - Request Logger                      │ │
-       │  └────────────────────────────────────────┘ │
-       │                                              │
-       │  ┌────────────────────────────────────────┐ │
-       │  │         ROUTE LAYER                    │ │
-       │  │                                        │ │
-       │  │  /api/intake  ────► Intake Routes     │ │
-       │  │  /api/auth    ────► Auth Routes       │ │
-       │  │  /            ────► Health Check      │ │
-       │  └────────────────────────────────────────┘ │
-       │                                              │
-       │  ┌────────────────────────────────────────┐ │
-       │  │      CONTROLLER LAYER                  │ │
-       │  │                                        │ │
-       │  │  - Business Logic                      │ │
-       │  │  - Input Validation                    │ │
-       │  │  - Response Formatting                 │ │
-       │  │  - Error Handling                      │ │
-       │  └────────────────────────────────────────┘ │
-       │                                              │
-       │  ┌────────────────────────────────────────┐ │
-       │  │         PRISMA ORM                     │ │
-       │  │                                        │ │
-       │  │  - Query Builder                       │ │
-       │  │  - Type Safety                         │ │
-       │  │  - Migrations                          │ │
-       │  │  - Connection Pool                     │ │
-       │  └────────────────────────────────────────┘ │
-       └──────┬───────────────────────────────────────┘
-              │
-       ┌──────▼──────────────────────────────────────┐
-       │         DATABASE LAYER                       │
-       │          (PostgreSQL)                        │
-       │                                              │
-       │  ┌─────────────────┐  ┌──────────────────┐  │
-       │  │ intake_         │  │  admin_users     │  │
-       │  │ submissions     │  │                  │  │
-       │  │                 │  │  - id            │  │
-       │  │ - id            │  │  - email         │  │
-       │  │ - name          │  │  - password_hash │  │
-       │  │ - email         │  │  - role          │  │
-       │  │ - phone         │  │  - created_at    │  │
-       │  │ - service       │  │                  │  │
-       │  │ - message       │  └──────────────────┘  │
-       │  │ - budget        │                         │
-       │  │ - status        │                         │
-       │  │ - created_at    │                         │
-       │  └─────────────────┘                         │
-       └──────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│                    OLD WORKFLOW ❌                          │
+├─────────────────────────────────────────────────────────────┤
+│  Client → Random DM → Back-and-forth → Confusion           │
+│         → Hours wasted → Maybe work together                │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│                    NEW WORKFLOW ✅                          │
+├─────────────────────────────────────────────────────────────┤
+│  Client → Your Public Link → Structured Form               │
+│         → You Review → Professional Response                │
+│         → Clear Decision → Work Together                    │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-### Data Flow:
+### 🎭 Two Sides of the Platform
 
-1. **Client Request** → User submits form or admin performs action
-2. **Reverse Proxy** → Nginx handles SSL and routes to API
-3. **Middleware** → Request passes through security & validation
-4. **Routes** → Maps endpoint to appropriate controller
-5. **Controller** → Executes business logic
-6. **Prisma ORM** → Queries database with type safety
-7. **Database** → PostgreSQL stores/retrieves data
-8. **Response** → JSON response sent back through layers
+#### 1️⃣ **Public Intake Page** (No Login Required)
+- Accessible via unique URL: `yourdomain.com/intake` or `yourdomain.com/username`
+- Your **"business front door"** that clients visit
+- Branded with your logo, colors, and messaging
+- Collects structured client information through customizable forms
+- Shows your services, pricing, and availability
+- Displays announcements (e.g., "Booking full for Q1")
+
+#### 2️⃣ **Protected Dashboard** (Login Required)
+- Your **business control center**
+- View and manage all incoming client submissions
+- Track client status (New → In Progress → Completed)
+- Add private internal notes for team collaboration
+- Manage your service catalog
+- Build custom intake forms with drag-and-drop
+- Customize your public page branding
+- Role-based access (Admin, Assistant, Viewer)
 
 ---
 
-## ⚡ Quick Start
+## 🚨 The Problem & Solution
+
+### The Pain Points
+
+As a freelance developer, I faced these challenges daily:
+
+❌ **Scattered Communication** — Client requests via DMs, emails, social media  
+❌ **Repetitive Questions** — Answering "What do you charge?" 100 times  
+❌ **Unclear Scopes** — Lengthy back-and-forth before understanding the project  
+❌ **Time Wastage** — Discovering projects weren't viable after hours of discussion  
+❌ **Unprofessional Image** — Ghosting clients because I forgot to reply  
+❌ **No Filtering System** — No way to screen viable projects systematically  
+
+### The Solution
+
+**Kuril Intake flips the script:**
+
+✅ **Centralized Intake** — All requests through one professional form  
+✅ **Pre-qualification** — Clients provide budget, timeline, and requirements upfront  
+✅ **Professional Image** — Automated confirmations and structured responses  
+✅ **Time Efficiency** — Review 10 submissions in the time of 1 DM conversation  
+✅ **Smart Filtering** — Focus on projects that match your skills and goals  
+✅ **Scalable Workflow** — From solo freelancer to small agency  
+
+---
+
+## ✨ Key Features
+
+### 🌐 Public Features (No Authentication)
+
+#### **Dynamic Intake Form**
+- 📝 Admin-created custom fields with full validation
+- 🎯 Service selection from pre-defined catalog
+- 📎 File uploads for project briefs and references
+- ⚡ Real-time validation with immediate feedback
+- ✅ Professional submission confirmation
+
+#### **Branded Experience**
+- 🎨 Custom logo, favicon, and background images
+- 🌈 Color theme configuration (primary, secondary, text)
+- 📢 Welcome messages and taglines
+- 🔔 Announcement banners (info, warning, success, error)
+- 📅 Scheduled announcements with start/end dates
+
+#### **Service Showcase**
+- 💼 Display your services with descriptions
+- 💰 Transparent pricing ranges
+- ⏱️ Estimated completion timelines
+- ✨ Feature lists for each service
+- 🎯 Help clients choose the right service
+
+### 🔒 Protected Dashboard Features
+
+#### **Client Management**
+- 📊 Real-time overview of all submissions
+- 🏷️ Status tracking (New, In Progress, Completed, Rejected, Archived)
+- 🔍 Advanced filtering and search
+- 📝 View detailed client submissions
+- 📈 Bulk status updates
+
+#### **Internal Collaboration**
+- 💬 Private notes visible only to team
+- 👥 Multi-user comments and discussions
+- 📅 Activity history with timestamps
+- 🔗 Context-rich client records
+
+#### **Service Catalog Management**
+- ➕ Create and edit services
+- 💵 Set pricing ranges (min/max)
+- 📆 Define estimated timelines
+- ✅ Feature lists for each service
+- 🎚️ Display ordering and active/inactive toggle
+
+#### **Form Builder**
+- 🛠️ Drag-and-drop field editor
+- 📋 Field types: text, textarea, email, number, select, radio, checkbox, date, file
+- ✔️ Custom validation rules per field
+- 💡 Help text for user guidance
+- 🎯 Required/optional field control
+- 📊 Field ordering and visibility
+
+#### **Branding Customization**
+- 🎨 Visual settings (colors, logos, images)
+- 📝 Content settings (messages, descriptions)
+- 🔍 SEO settings (meta tags, Open Graph)
+- 🖼️ Image upload and management
+
+#### **User Management**
+- 👤 Role-based access control
+- 🔐 Admin, Assistant, Viewer roles
+- ➕ Add team members with permissions
+- 📊 Activity tracking per user
+
+#### **Analytics Dashboard** *(Planned)*
+- 📈 Submission trends over time
+- ✅ Acceptance rate tracking
+- 🎯 Service popularity metrics
+- 💰 Budget distribution analysis
+- ⏱️ Response time monitoring
+
+---
+
+## 🎬 Demo
+
+### Public Intake Page
+```
+https://yourdomain.com/intake
+```
+
+**What clients see:**
+- Branded landing page with your logo and colors
+- Service selection with pricing
+- Custom intake form fields
+- Professional submission confirmation
+
+### Protected Dashboard
+```
+https://yourdomain.com/dashboard
+```
+
+**What you see:**
+- All client submissions in one place
+- Status management and filtering
+- Internal notes and team collaboration
+- Service and form customization
+
+**Default Admin Credentials:**
+```
+Email: admin@kuril.dev
+Password: Admin123!
+```
+
+⚠️ **Change these immediately after first login!**
+
+---
+
+## 🛠️ Technology Stack
+
+### Backend Technologies
+
+| Technology | Purpose | Why Chosen |
+|-----------|---------|------------|
+| **Node.js + Express** | Server framework | Perfect balance of simplicity and power |
+| **TypeScript** | Type safety | Catch errors before runtime, better DX |
+| **PostgreSQL** | Database | ACID compliance, relations, JSON support |
+| **Prisma ORM** | Database toolkit | Type-safe queries, excellent migrations |
+| **JWT** | Authentication | Stateless, scalable, mobile-friendly |
+| **Zod** | Validation | TypeScript-first, type inference |
+| **bcrypt** | Password hashing | Industry standard, adaptive difficulty |
+| **Winston** | Logging | Multiple transports, production-ready |
+
+### Frontend Technologies
+
+| Technology | Purpose | Why Chosen |
+|-----------|---------|------------|
+| **React 18** | UI library | Huge ecosystem, component-based |
+| **TypeScript** | Type safety | Same benefits as backend |
+| **Vite** | Build tool | Lightning-fast HMR, modern tooling |
+| **Tailwind CSS** | Styling | Utility-first, rapid development |
+| **React Router** | Routing | Standard for React SPAs |
+| **Axios** | HTTP client | Interceptors, request/response transforms |
+| **React Hook Form** | Form management | Performance-focused, minimal re-renders |
+| **Zod** | Validation | Shared schemas with backend |
+| **date-fns** | Date utilities | Lightweight, functional |
+| **Lucide React** | Icons | Beautiful, consistent icon set |
+| **Recharts** | Charts | Composable, React-friendly |
+
+### Development & DevOps
+
+| Technology | Purpose |
+|-----------|---------|
+| **Git** | Version control |
+| **Docker** | Containerization |
+| **Docker Compose** | Multi-container orchestration |
+| **GitHub Actions** | CI/CD |
+| **ESLint** | Code linting |
+| **Prettier** | Code formatting |
+
+---
+
+## 🏗️ Architecture
+
+### Design Philosophy: Domain-Driven Design (DDD)
+
+**Why DDD?**
+
+Instead of scattering related code across `controllers/`, `models/`, `services/`, we group everything by **business domain**:
+
+```
+features/
+├── auth/              # Everything about authentication
+├── clients/           # Everything about client management  
+├── services/          # Everything about service catalog
+├── formBuilder/       # Everything about dynamic forms
+├── branding/          # Everything about customization
+├── notes/             # Everything about internal notes
+├── users/             # Everything about user management
+├── announcements/     # Everything about announcements
+└── dashboard/         # Everything about analytics
+```
+
+**Benefits:**
+- ✅ All related code in one place
+- ✅ Easy to test in isolation
+- ✅ Clear separation of concerns
+- ✅ Scalable to microservices
+
+### Application Flow
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    CLIENT JOURNEY                        │
+├─────────────────────────────────────────────────────────┤
+│                                                          │
+│  1. Client visits your public intake URL                │
+│  2. Sees your branding, services, announcements         │
+│  3. Fills custom intake form                            │
+│  4. Submits → Stored in database                        │
+│  5. Receives confirmation message                       │
+│                                                          │
+└─────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────┐
+│                    YOUR WORKFLOW                         │
+├─────────────────────────────────────────────────────────┤
+│                                                          │
+│  1. Login to protected dashboard                        │
+│  2. See new submission notification                     │
+│  3. Review client details and requirements              │
+│  4. Add internal notes (if team)                        │
+│  5. Update status: Accept / Reject / In Progress        │
+│  6. Contact client directly                             │
+│                                                          │
+└─────────────────────────────────────────────────────────┘
+```
+
+### Security Architecture
+
+```typescript
+// Multi-layer security approach
+
+1. TypeScript Compile-Time Checks
+   └─> Catch type errors during development
+
+2. Zod Runtime Validation  
+   └─> Validate all user input at API boundaries
+
+3. JWT Authentication
+   ├─> Access Token (15 minutes)
+   └─> Refresh Token (7 days)
+
+4. Role-Based Access Control
+   ├─> Admin (Full access)
+   ├─> Assistant (Read + Comment)
+   └─> Viewer (Read only)
+
+5. Database Constraints
+   └─> Final safety net, prevent data corruption
+
+6. Rate Limiting
+   └─> Prevent brute force and DDoS attacks
+
+7. Security Headers (Helmet.js)
+   └─> XSS, clickjacking, MIME-sniffing protection
+```
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-Make sure you have installed:
-- **Node.js** >= 18.x
-- **npm** >= 9.x
-- **PostgreSQL** >= 14.x
-- **Git**
+Ensure you have these installed:
 
-### 1. Clone Repository
+- **Node.js** v18 or higher ([Download](https://nodejs.org/))
+- **PostgreSQL** v14 or higher ([Download](https://www.postgresql.org/))
+- **npm** or **yarn** (comes with Node.js)
+- **Git** ([Download](https://git-scm.com/))
+
+### Installation (5 Minutes)
+
+#### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/kuril-intake-client.git
+git clone https://github.com/heyitskuril/kuril-intake-client.git
 cd kuril-intake-client
 ```
 
-### 2. Setup Backend
+#### 2. Backend Setup
 
 ```bash
-# Navigate to backend
 cd backend
 
 # Install dependencies
 npm install
 
-# Setup environment variables
+# Setup environment
 cp .env.example .env
-# Edit .env with your configuration
 
-# Setup database
-npx prisma generate
-npx prisma migrate dev --name init
+# Edit .env with your database credentials
+nano .env
+```
 
-# (Optional) Seed admin user
-node prisma/seed.js
+**Minimal `.env` configuration:**
+```env
+DATABASE_URL="postgresql://postgres:password@localhost:5432/kuril_intake"
+JWT_SECRET="your-super-secret-key-change-this"
+JWT_REFRESH_SECRET="your-refresh-secret-change-this"
+FRONTEND_URL="http://localhost:5173"
+```
+
+```bash
+# Generate Prisma client
+npm run prisma:generate
+
+# Run migrations
+npm run prisma:migrate
+
+# Seed database (creates admin user)
+npm run prisma:seed
 
 # Start backend server
 npm run dev
 ```
 
-Backend runs at: **http://localhost:5000**
+✅ Backend running at `http://localhost:5000`
 
-### 3. Setup Frontend
-
-Open new terminal:
+#### 3. Frontend Setup
 
 ```bash
-# Navigate to frontend
-cd frontend
+cd ../frontend
 
 # Install dependencies
 npm install
 
-# Setup environment variables
+# Setup environment
 cp .env.example .env
-# Edit .env with backend URL
+```
 
+**Minimal `.env` configuration:**
+```env
+VITE_API_URL=http://localhost:5000/api
+```
+
+```bash
 # Start frontend server
 npm run dev
 ```
 
-Frontend runs at: **http://localhost:3000**
+✅ Frontend running at `http://localhost:5173`
 
-### 4. Test the Application
+#### 4. Access the Application
 
-1. **Public Form**: Open http://localhost:3000
-2. **Admin Login**: Open http://localhost:3000/admin/login
-   - Email: `admin@kuril.com`
-   - Password: `admin123`
+**Public Intake Page:**
+```
+http://localhost:5173/intake
+```
+
+**Admin Dashboard:**
+```
+http://localhost:5173/login
+
+Email: admin@kuril.dev
+Password: Admin123!
+```
 
 ---
 
 ## 📁 Project Structure
 
 ```
-kuril-intake-client/
-│
-├── backend/                        # Backend API (Node.js + Express)
+intaku/
+├── backend/
 │   ├── src/
-│   │   ├── controllers/            # Business logic
-│   │   ├── db/                     # Database connection
-│   │   ├── middlewares/            # Express middlewares
-│   │   ├── routes/                 # API routes
-│   │   ├── utils/                  # Helper functions
-│   │   ├── app.js                  # Express app config
-│   │   └── server.js               # Server entry point
-│   │
-│   ├── prisma/
-│   │   ├── schema.prisma           # Database schema
-│   │   └── migrations/             # Migration history
-│   │
-│   ├── .env.example                # Environment template
-│   ├── package.json                # Backend dependencies
-│   └── README.md                   # Backend documentation
+│   │   ├── domains/              # Domain-driven structure
+│   │   │   ├── auth/             # Authentication logic
+│   │   │   ├── clients/          # Client management
+│   │   │   ├── services/         # Service catalog
+│   │   │   ├── formBuilder/      # Dynamic form builder
+│   │   │   ├── branding/         # Customization
+│   │   │   ├── notes/            # Internal notes
+│   │   │   ├── users/            # User management
+│   │   │   ├── announcements/    # Announcements
+│   │   │   ├── activityLogs/     # Audit trail
+│   │   │   └── dashboard/        # Analytics
+│   │   ├── shared/               # Shared utilities
+│   │   │   ├── middleware/       # Express middleware
+│   │   │   ├── utils/            # Helper functions
+│   │   │   └── types/            # TypeScript types
+│   │   ├── config/               # Configuration
+│   │   ├── prisma/               # Database schema
+│   │   ├── app.ts                # Express app
+│   │   └── server.ts             # Server entry
+│   └── tests/                    # Test suites
 │
-├── frontend/                       # Frontend App (React + Vite)
+├── frontend/
 │   ├── src/
-│   │   ├── components/             # React components
-│   │   ├── hooks/                  # Custom hooks
-│   │   ├── pages/                  # Page components
-│   │   ├── services/               # API services
-│   │   ├── store/                  # State management
-│   │   ├── App.jsx                 # Main app component
-│   │   ├── main.jsx                # Entry point
-│   │   └── index.css               # Global styles
-│   │
-│   ├── .env.example                # Environment template
-│   ├── package.json                # Frontend dependencies
-│   ├── tailwind.config.js          # Tailwind config
-│   ├── vite.config.js              # Vite config
-│   └── README.md                   # Frontend documentation
+│   │   ├── features/             # Feature modules
+│   │   │   ├── auth/             # Auth UI & logic
+│   │   │   ├── clients/          # Client management UI
+│   │   │   ├── services/         # Service management UI
+│   │   │   ├── formBuilder/      # Form builder UI
+│   │   │   ├── branding/         # Branding UI
+│   │   │   ├── notes/            # Notes UI
+│   │   │   ├── users/            # User management UI
+│   │   │   ├── announcements/    # Announcements UI
+│   │   │   ├── dashboard/        # Dashboard UI
+│   │   │   └── public/           # Public intake page
+│   │   ├── shared/               # Shared components
+│   │   │   ├── components/       # Reusable components
+│   │   │   ├── hooks/            # Custom React hooks
+│   │   │   ├── utils/            # Helper functions
+│   │   │   └── types/            # TypeScript types
+│   │   ├── pages/                # Page components
+│   │   ├── routes/               # Routing configuration
+│   │   ├── App.tsx               # Root component
+│   │   ├── main.tsx              # Entry point
+│   │   └── index.css             # Global styles
+│   └── public/                   # Static assets
 │
-├── docker/                         # Docker configurations
-│   ├── Dockerfile.backend
-│   ├── Dockerfile.frontend
-│   └── docker-compose.yml
-│
-├── docs/                           # Additional documentation
-│   ├── API.md                      # API documentation
-│   ├── DEPLOYMENT.md               # Deployment guide
-│   └── ARCHITECTURE.md             # Architecture details
-│
-├── .github/
-│   └── workflows/                  # CI/CD pipelines
-│       ├── backend-ci.yml
-│       └── frontend-ci.yml
-│
-├── .gitignore                      # Git ignore rules
-├── LICENSE                         # MIT License
-├── CONTRIBUTING.md                 # Contribution guide
-├── CHANGELOG.md                    # Version history
-└── README.md                       # This file
+├── docker-compose.yml            # Docker orchestration
+└── README.md                     # This file
+```
+
+### Key Architectural Patterns
+
+#### 1. **Domain-Based Structure**
+Each feature is self-contained with its own:
+- Routes (API endpoints)
+- Controllers (request handling)
+- Services (business logic)
+- Repositories (data access)
+- Validation (input validation)
+- Types (TypeScript definitions)
+
+#### 2. **Repository Pattern**
+Separation between business logic and data access:
+```typescript
+// Service handles business logic
+class ClientsService {
+  constructor(private repo: ClientsRepository) {}
+  
+  async create(data) {
+    // Business logic here
+    return this.repo.create(data);
+  }
+}
+
+// Repository handles database operations
+class ClientsRepository {
+  async create(data) {
+    return prisma.client.create({ data });
+  }
+}
+```
+
+#### 3. **API Response Standardization**
+Consistent response format across all endpoints:
+```typescript
+// Success
+{
+  "success": true,
+  "message": "Client created successfully",
+  "data": { /* response data */ }
+}
+
+// Error
+{
+  "success": false,
+  "error": "Validation failed",
+  "details": [ /* error details */ ]
+}
 ```
 
 ---
 
-## 📚 Documentation
-
-Comprehensive documentation for each part:
-
-### Main Documentation:
-- **[ROOT README](README.md)** - This file (overview, quick start)
-- **[Backend README](backend/README.md)** - Complete backend guide
-- **[Frontend README](frontend/README.md)** - Complete frontend guide
-
-### Additional Docs:
-- **[API Documentation](docs/API.md)** - Detailed API endpoints
-- **[Deployment Guide](docs/DEPLOYMENT.md)** - Production deployment
-- **[Architecture](docs/ARCHITECTURE.md)** - System design deep dive
-- **[Contributing](CONTRIBUTING.md)** - How to contribute
-- **[Changelog](CHANGELOG.md)** - Version history
-
-### Quick Links:
-- [Backend Installation](backend/README.md#-installation)
-- [Frontend Installation](frontend/README.md#-installation)
-- [API Endpoints](backend/README.md#-api-documentation)
-- [Environment Variables](backend/README.md#-environment-variables)
-- [Deployment Options](backend/README.md#-deployment)
-- [Troubleshooting](backend/README.md#-troubleshooting)
-
----
-
-## 💻 Development
-
-### Development Workflow
-
-#### 1. Backend Development
-
-```bash
-cd backend
-
-# Development mode (auto-restart)
-npm run dev
-
-# Production mode
-npm start
-
-# Database operations
-npx prisma studio           # Open database GUI
-npx prisma migrate dev      # Create migration
-npx prisma generate         # Generate Prisma Client
-```
-
-#### 2. Frontend Development
-
-```bash
-cd frontend
-
-# Development mode (HMR)
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Lint code
-npm run lint
-```
-
-### Code Quality
-
-#### Backend Standards:
-- Use **CommonJS** (`require`/`module.exports`)
-- Follow **MVC-like** architecture
-- Add JSDoc comments
-- Handle errors properly
-- Validate all inputs
-
-#### Frontend Standards:
-- Use **ES6+** features
-- Functional components with hooks
-- Follow React best practices
-- Use Tailwind utility classes
-- Keep components small & focused
-
-### Git Workflow
-
-```bash
-# Create feature branch
-git checkout -b feature/amazing-feature
-
-# Make changes
-git add .
-git commit -m "feat: add amazing feature"
-
-# Push to your fork
-git push origin feature/amazing-feature
-
-# Open Pull Request on GitHub
-```
-
----
-
-## 🚀 Deployment
-
-Multiple deployment options available:
-
-### Option 1: Full Stack - Docker Compose (Recommended)
-
-```bash
-# Build and start all services
-docker-compose up -d
-
-# View logs
-docker-compose logs -f
-
-# Stop services
-docker-compose down
-```
-
-**Includes:**
-- PostgreSQL database
-- Backend API
-- Frontend app
-- Nginx reverse proxy
-
-### Option 2: Separate Deployment
-
-#### Backend:
-- **VPS**: DigitalOcean, Linode, AWS EC2
-- **Cloud**: Railway, Heroku, Render
-- **Container**: Docker on any platform
-
-[Backend Deployment Guide →](backend/README.md#-deployment)
-
-#### Frontend:
-- **Vercel** (Recommended for React)
-- **Netlify**
-- **AWS S3 + CloudFront**
-- **Nginx** on VPS
-
-[Frontend Deployment Guide →](frontend/README.md#-deployment)
-
-### Option 3: Cloud Platforms
-
-#### Railway (Easiest):
-```bash
-npm install -g @railway/cli
-railway login
-railway init
-railway up
-```
-
-#### Vercel (Frontend):
-```bash
-cd frontend
-vercel
-```
-
-### Environment Setup
-
-**Backend `.env`:**
-```env
-PORT=5000
-NODE_ENV=production
-DATABASE_URL=postgresql://user:pass@host:5432/db
-JWT_SECRET=your-32-char-secret
-CLIENT_URL=https://yourdomain.com
-```
-
-**Frontend `.env`:**
-```env
-VITE_API_BASE_URL=https://api.yourdomain.com
-```
-
----
-
-## 📖 API Documentation
+## 📊 API Documentation
 
 ### Base URL
 ```
-Development: http://localhost:5000
-Production: https://api.yourdomain.com
+Development: http://localhost:5000/api
+Production: https://api.yourdomain.com/api
 ```
 
-### Endpoints Summary
+### Authentication Endpoints
 
-#### Public Endpoints (No Auth):
+#### POST `/auth/login`
+Login with credentials.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/` | Health check |
-| POST | `/api/intake` | Submit intake form |
-| POST | `/api/auth/login` | Admin login |
-
-#### Protected Endpoints (Requires JWT):
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/auth/me` | Get current admin |
-| GET | `/api/intake` | List all intakes (paginated) |
-| GET | `/api/intake/:id` | Get intake detail |
-| PATCH | `/api/intake/:id/status` | Update intake status |
-| DELETE | `/api/intake/:id` | Delete intake |
-
-### Authentication
-
-Protected endpoints require JWT token:
-
-```http
-Authorization: Bearer <your-jwt-token>
+**Request:**
+```json
+{
+  "email": "admin@kuril.dev",
+  "password": "Admin123!"
+}
 ```
 
-### Example Requests
-
-**Submit Intake:**
-```bash
-curl -X POST http://localhost:5000/api/intake \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "John Doe",
-    "email": "john@example.com",
-    "phone": "+628123456789",
-    "serviceInquiry": "Website Development",
-    "message": "I need a corporate website"
-  }'
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "accessToken": "eyJhbG...",
+    "refreshToken": "eyJhbG...",
+    "user": {
+      "id": "uuid",
+      "name": "Admin User",
+      "email": "admin@kuril.dev",
+      "role": "admin"
+    }
+  }
+}
 ```
 
-**Login Admin:**
-```bash
-curl -X POST http://localhost:5000/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{
-    "email": "admin@kuril.com",
-    "password": "admin123"
-  }'
-```
+#### POST `/auth/register`
+Register new user (admin only).
 
-**Get All Intakes:**
-```bash
-curl -X GET http://localhost:5000/api/intake?page=1&limit=10 \
-  -H "Authorization: Bearer YOUR_TOKEN"
-```
+#### POST `/auth/refresh`
+Refresh access token.
 
-[Full API Documentation →](backend/README.md#-api-documentation)
+### Client Endpoints
+
+#### POST `/clients` (Public)
+Submit intake form.
+
+#### GET `/clients` (Protected)
+Get all clients with filtering.
+
+**Query Parameters:**
+- `status` - Filter by status
+- `search` - Search by name/email
+- `limit` - Results per page
+- `offset` - Pagination offset
+
+#### GET `/clients/:id` (Protected)
+Get single client details.
+
+#### PUT `/clients/:id` (Protected)
+Update client status/details.
+
+### Service Endpoints
+
+#### GET `/services/public`
+Get all active services (public).
+
+#### POST `/services` (Protected)
+Create new service (admin only).
+
+#### PUT `/services/:id` (Protected)
+Update service (admin only).
+
+#### DELETE `/services/:id` (Protected)
+Delete service (admin only).
+
+### Form Builder Endpoints
+
+#### GET `/form-builder/public`
+Get active form fields (public).
+
+#### POST `/form-builder` (Protected)
+Create form field (admin only).
+
+#### PUT `/form-builder/:id` (Protected)
+Update form field (admin only).
+
+#### DELETE `/form-builder/:id` (Protected)
+Delete form field (admin only).
+
+### Branding Endpoints
+
+#### GET `/branding/public`
+Get branding settings (public).
+
+#### POST `/branding` (Protected)
+Update branding (admin only).
+
+### Full API documentation available in [API_DOCS.md](./API_DOCS.md)
 
 ---
 
-## 📸 Screenshots
+## 🐳 Deployment
 
-### Public Intake Form
-![Intake Form](docs/images/intake-form.png)
-*Clean, professional form for client submissions*
+### Quick Deploy with Docker
 
-### Admin Login
-![Admin Login](docs/images/admin-login.png)
-*Secure JWT-based authentication*
+```bash
+# 1. Create environment file
+cat > .env << EOF
+DB_PASSWORD=your_secure_password
+JWT_SECRET=$(openssl rand -base64 32)
+JWT_REFRESH_SECRET=$(openssl rand -base64 32)
+FRONTEND_URL=https://yourdomain.com
+VITE_API_URL=https://api.yourdomain.com/api
+EOF
 
-### Admin Dashboard
-![Dashboard](docs/images/dashboard.png)
-*Overview with statistics and recent submissions*
+# 2. Build and start
+docker-compose up -d
 
-### Intakes List
-![Intakes List](docs/images/intakes-list.png)
-*Manage all submissions with pagination and filters*
+# 3. Run migrations
+docker-compose exec backend npx prisma migrate deploy
 
-### Intake Detail
-![Intake Detail](docs/images/intake-detail.png)
-*View and manage submission details*
+# 4. Seed database
+docker-compose exec backend npx prisma db seed
+```
+
+### Deployment Options
+
+| Platform | Best For | Complexity |
+|----------|----------|------------|
+| **Docker + VPS** | Full control | Medium |
+| **Heroku** | Quick deploy | Easy |
+| **Vercel + Railway** | Frontend + Backend | Easy |
+| **DigitalOcean App** | All-in-one | Easy |
+| **AWS EC2 + RDS** | Production scale | Hard |
+
+### Detailed deployment guides available in [DEPLOYMENT.md](./DEPLOYMENT.md)
+
+---
+
+## 🗺️ Roadmap
+
+### ✅ Phase 1: Core System (Completed)
+- [x] User authentication & authorization
+- [x] Client intake form submission
+- [x] Admin dashboard for client management
+- [x] Internal notes system
+- [x] Role-based access control
+- [x] Service catalog management
+- [x] Dynamic form builder
+- [x] Branding customization
+
+### 🚧 Phase 2: Enhancement (In Progress)
+- [ ] Rich text editor for notes
+- [ ] File upload for client attachments
+- [ ] Email notifications
+- [ ] CSV export functionality
+- [ ] Advanced search and filtering
+- [ ] Mobile responsive improvements
+
+### 📋 Phase 3: Analytics (Planned)
+- [ ] Submission analytics dashboard
+- [ ] Conversion rate tracking
+- [ ] Budget distribution analysis
+- [ ] Service popularity metrics
+- [ ] Response time monitoring
+- [ ] Custom reports
+
+### ⚡ Phase 4: Automation (Planned)
+- [ ] Automated email responses
+- [ ] Status change notifications
+- [ ] Client follow-up reminders
+- [ ] Webhook integrations
+- [ ] Slack/Discord notifications
+- [ ] Calendar integration
+
+### 🔮 Phase 5: Multi-Tenant SaaS (Future)
+- [ ] Multi-tenant architecture
+- [ ] Custom subdomain per user
+- [ ] Subscription management
+- [ ] Usage-based billing
+- [ ] Team collaboration
+- [ ] API for third-party integrations
+
+### 🚀 Phase 6: Advanced Features (Future)
+- [ ] AI-powered client matching
+- [ ] Automated pricing suggestions
+- [ ] Video consultation booking
+- [ ] Contract management
+- [ ] Payment processing
+- [ ] Multi-language support
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions from the community!
+This project welcomes contributions! Whether you're fixing bugs, improving documentation, or proposing new features, your help is appreciated.
 
-### How to Contribute:
+### How to Contribute
 
-1. **Fork the repository**
-2. **Create a feature branch** (`git checkout -b feature/AmazingFeature`)
-3. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
-4. **Push to the branch** (`git push origin feature/AmazingFeature`)
-5. **Open a Pull Request**
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
+3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** to the branch (`git push origin feature/AmazingFeature`)
+5. **Open** a Pull Request
 
-### Contribution Guidelines:
+### Contribution Guidelines
 
-- Follow existing code style
-- Write meaningful commit messages
-- Add tests for new features
-- Update documentation
-- Keep PRs focused and small
+- Follow existing code style and architecture patterns
+- Write tests for new features
+- Update documentation as needed
+- Keep commits atomic and well-described
+- Be respectful in discussions
 
-[Full Contributing Guide →](CONTRIBUTING.md)
+### Areas Where You Can Help
 
----
-
-## 🗺 Roadmap
-
-### Phase 1: MVP ✅ (Current)
-- [x] Backend API with Express
-- [x] PostgreSQL with Prisma
-- [x] JWT Authentication
-- [x] Public intake form
-- [x] Admin dashboard
-- [x] CRUD operations
-- [x] Responsive design
-
-### Phase 2: Enhanced Features 🚧 (Next)
-- [ ] Email notifications (SMTP)
-- [ ] File upload (AWS S3)
-- [ ] Export to CSV/PDF
-- [ ] Advanced search & filters
-- [ ] Bulk operations
-- [ ] Activity logs
-- [ ] Email templates
-
-### Phase 3: Advanced Features 📋 (Future)
-- [ ] Real-time updates (WebSocket)
-- [ ] Analytics dashboard
-- [ ] Custom fields builder
-- [ ] Multi-language support
-- [ ] API rate limiting
-- [ ] Automated testing (E2E)
-- [ ] Performance optimization
-
-### Phase 4: Enterprise Features 📋 (Future)
-- [ ] Multi-tenancy support
-- [ ] Role-based access control
-- [ ] API versioning
-- [ ] Webhook integrations
-- [ ] Advanced reporting
-- [ ] Audit trails
-- [ ] Data encryption at rest
+- 🐛 Bug fixes
+- 📚 Documentation improvements
+- ✨ Feature implementations
+- 🎨 UI/UX enhancements
+- 🧪 Test coverage
+- 🌍 Translations (future)
 
 ---
 
@@ -768,933 +789,697 @@ We welcome contributions from the community!
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
-```
-MIT License
+**What this means:**
 
-Copyright (c) 2024 Kuril Intake Client
+✅ **You CAN:**
+- Use for personal projects
+- Use for commercial projects
+- Modify the code
+- Distribute the code
+- Use privately
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction...
-```
+❌ **You CANNOT:**
+- Hold the author liable
+- Use trademarks without permission
+
+⚠️ **You MUST:**
+- Include the original license
+- State significant changes
 
 ---
 
-## 📞 Support
+## 👤 About the Developer
 
-### Need Help?
+### Hi, I'm Kuril! 👋
 
-- **Documentation**: Check [docs](docs/) folder
-- **Issues**: [GitHub Issues](https://github.com/yourusername/kuril-intake-client/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/kuril-intake-client/discussions)
-- **Email**: support@kuril.com
-- **Discord**: [Join our community](https://discord.gg/kuril)
+I'm a **full-stack developer** passionate about building practical solutions to real-world problems. This project was born from my frustration with disorganized client intake processes.
 
-### Reporting Issues
+### Why I Built This
 
-Please include:
-- Operating system & version
-- Node.js version
-- Steps to reproduce
-- Expected vs actual behavior
-- Error messages/logs
+- **Solve Real Problems**: Transform chaotic client requests into structured workflows
+- **Learn Best Practices**: Implement production-grade architecture and security
+- **Demonstrate Skills**: Showcase full-stack capabilities
+- **Share Knowledge**: Help other developers learn from complete projects
+- **Build in Public**: Transparent development process
+
+### Tech Stack Proficiency
+
+**Backend:** Node.js, Express, TypeScript, PostgreSQL, Prisma  
+**Frontend:** React, TypeScript, Tailwind CSS, Vite  
+**DevOps:** Docker, Git, CI/CD  
+**Architecture:** Domain-Driven Design, Repository Pattern, SOLID
+
+### What I'm Looking For
+
+I'm actively seeking opportunities as a **Full-Stack Developer** or **Backend Developer**.
+
+**Interested in:**
+- Companies valuing clean architecture
+- Teams prioritizing mentorship
+- Projects solving real problems
+- Remote or hybrid opportunities
+
+### Let's Connect!
+
+- 📧 **Email:** [heyitskuril@gmail.com](mailto:heyitskuril@gmail.com)
+- 💼 **LinkedIn:** [linkedin.com/in/kuril-dev](https://linkedin.com/in/kuril-dev)
+- 🐙 **GitHub:** [@heyitskuril](https://github.com/heyitskuril)
+- 🌐 **Portfolio:** [kuril.dev](https://kuril.dev)
+- 🐦 **Twitter:** [@heyitskuril](https://twitter.com/heyitskuril)
+
+**Open to:**
+- Job opportunities
+- Freelance projects
+- Collaboration
+- Mentorship
+- Tech discussions
 
 ---
 
 ## 🙏 Acknowledgments
 
-### Technologies:
-- [Node.js](https://nodejs.org/) - JavaScript runtime
-- [Express.js](https://expressjs.com/) - Web framework
-- [PostgreSQL](https://www.postgresql.org/) - Database
-- [Prisma](https://www.prisma.io/) - Next-generation ORM
-- [React](https://reactjs.org/) - UI library
-- [Vite](https://vitejs.dev/) - Build tool
-- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
-- [TanStack Query](https://tanstack.com/query) - Data fetching
+This project wouldn't exist without:
 
-### Inspiration:
-- [TypeForm](https://www.typeform.com/) - Form inspiration
-- [Airtable](https://www.airtable.com/) - Database UI inspiration
-- [Linear](https://linear.app/) - Design inspiration
+- **Open Source Community** - For amazing tools and libraries
+- **Stack Overflow** - For countless solutions
+- **TypeScript Team** - For making JavaScript enjoyable
+- **Prisma Team** - For the best ORM experience
+- **Vercel** - For Vite and modern tooling
+- **Tailwind Labs** - For revolutionizing CSS
 
-### Contributors:
-Thanks to all contributors who have helped this project grow!
+### Special Thanks
+
+- ☕ **Coffee** - Powering late-night coding sessions
+- 🐱 **My Cat** - Moral support and keyboard quality assurance
+- 😤 **Frustration** - Motivating me to build solutions
+- 👀 **You** - For reading this and checking out my work
 
 ---
 
-## 📊 Project Stats
+## 💭 Final Thoughts
 
-- **Language**: JavaScript
-- **Framework**: Express.js + React
-- **Database**: PostgreSQL
-- **Lines of Code**: ~5,000+
-- **Components**: 15+
-- **API Endpoints**: 8
-- **Test Coverage**: Coming soon
+### This is More Than Code
 
----
+**It's a philosophy:**
 
-## 🌟 Star History
+> "Build tools that respect your time. Create systems that scale your impact. Work smarter, not harder."
 
-If you find this project helpful, please consider giving it a ⭐!
+This project represents:
+- **Systems Thinking** over feature accumulation
+- **Professional Boundaries** over people-pleasing
+- **Quality** over quantity
+- **Sustainable Work** over burnout
+- **Real Solutions** over tutorial projects
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/kuril-intake-client&type=Date)](https://star-history.com/#yourusername/kuril-intake-client&Date)
+### What I Learned
 
----
-
-## 📈 Performance
-
-- **Lighthouse Score**: 95+
-- **First Contentful Paint**: < 1.5s
-- **Time to Interactive**: < 3s
-- **API Response Time**: < 100ms (avg)
-- **Database Queries**: Optimized with indexes
+1. **Architecture Matters** - Good structure saves debugging hours
+2. **Security is Essential** - Worth the extra effort
+3. **Documentation is Love** - Future-you will thank present-you
+4. **Testing Saves Time** - Catch bugs before production
+5. **User Experience** - Small details create big impact
+6. **Ship It** - Perfectionism vs progress
+7. **Ask for Help** - Community is supportive
+8. **Build in Public** - Transparency builds trust
 
 ---
 
 <div align="center">
 
-### Built with ❤️ using PERN Stack
+**⭐ If you find this project helpful, please consider starring it on GitHub! ⭐**
 
-**PostgreSQL • Express • React • Node.js**
+**Built with ❤️ by [Kuril](https://github.com/heyitskuril)**
 
-[⬆ Back to Top](#-kuril-intake-client)
-
----
-
-Made with 💪 by developers, for developers
-
-**[⭐ Star this repo](https://github.com/yourusername/kuril-intake-client)** • **[🐛 Report Bug](https://github.com/yourusername/kuril-intake-client/issues)** • **[✨ Request Feature](https://github.com/yourusername/kuril-intake-client/issues)**
+**[⬆ Back to Top](#-intaku)**
 
 </div>
 
+==========================================================================================
 
-bikinin prompt biar nanti dibuatin sama ai untuk mvp app nya
 
-# 🚀 Kuril Intake Client
-
-> **Full-Stack Learning Project - PERN Stack Implementation**  
-> A production-ready client intake management system built while mastering full-stack development from Month 3 to Month 5 of the PERN roadmap
-
-[![Node.js](https://img.shields.io/badge/Node.js-18.x-green.svg)](https://nodejs.org/)
-[![React](https://img.shields.io/badge/React-18.x-61dafb.svg)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14+-336791.svg)](https://www.postgresql.org/)
-[![Express](https://img.shields.io/badge/Express-4.18-blue.svg)](https://expressjs.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Roadmap](https://img.shields.io/badge/Learning-PERN_Stack-blueviolet.svg)]()
-
----
-
-## 📋 Table of Contents
-
-- [Overview](#-overview)
-- [Learning Journey](#-learning-journey)
-- [Skills Implemented](#-skills-implemented)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [System Architecture](#-system-architecture)
-- [Quick Start](#-quick-start)
-- [Project Structure](#-project-structure)
-- [Development Guide](#-development-guide)
-- [Roadmap Integration](#-roadmap-integration)
-- [What I Learned](#-what-i-learned)
-- [Next Steps](#-next-steps)
-- [Documentation](#-documentation)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Support](#-support)
-- [Acknowledgments](#-acknowledgments)
-
----
-
-## 🎯 Overview
-
-**Kuril Intake Client** adalah project full-stack yang gue bangun sebagai implementasi praktis dari **PERN Stack Learning Roadmap**. Project ini menggabungkan konsep-konsep fundamental yang dipelajari dari **Month 3 (Databases & Security)** sampai **Month 5 (Full-Stack Development)**, dengan penambahan **TypeScript** di Month 4 untuk type-safe development.
-
-### 🎬 Real-World Application:
-
-Sistem ini dirancang untuk:
-- **Digital Agencies** - Manage project inquiries from potential clients
-- **Consulting Firms** - Track consultation requests and follow-ups
-- **Service Businesses** - Handle service inquiries and bookings
-- **SaaS Companies** - Manage demo requests and sales leads
-- **Freelancers** - Professional intake form for client projects
-- **Learning Purpose** - Implement real production patterns
-
-### 💡 Why This Project?
-
-- ✅ **Hands-On Learning** - Apply concepts immediately after learning
-- ✅ **Production Patterns** - Real-world architecture, not toy examples
-- ✅ **Type Safety** - TypeScript for catching errors early
-- ✅ **Progressive Complexity** - Start simple, add features incrementally
-- ✅ **Portfolio Ready** - Showcase full-stack capabilities
-- ✅ **Best Practices** - Security, testing, deployment included
-- ✅ **Documentation First** - Every decision is documented
-
----
-
-## 📚 Learning Journey
-
-This project maps directly to the **PERN Stack Roadmap**:
-
-### Month 3: Databases & Security (Week 9-12)
-**Implemented in Backend**
-- ✅ **Week 9**: PostgreSQL Fundamentals → Database design, Prisma ORM, migrations
-- ✅ **Week 10**: Authentication E2E → JWT auth, bcrypt, RBAC, security patterns
-- ✅ **Week 11**: Dashboard UI → Admin interface (prepared for React integration)
-- ✅ **Week 12**: Docs & Deployment → API documentation, deployment strategy
-
-### Month 4: React Core + TypeScript (Week 13-16)
-**Implemented in Frontend**
-- ✅ **Week 13**: React Fundamentals → Components, state, hooks, props
-- ✅ **Week 14**: Routing & Forms → React Router, React Hook Form, validation
-- ✅ **Week 15**: Start TypeScript → Type-safe components & props
-- ✅ **Week 16**: Finalizing TypeScript → Type-safe utilities, advanced types
-
-### Month 5: Full-Stack Development (Week 17-20)
-**Integrated Frontend + Backend**
-- ✅ **Week 17**: Connecting Frontend/Backend → Axios, CORS, API integration
-- ✅ **Week 18**: Authentication Flow → JWT client-side, protected routes
-- ✅ **Week 19**: Admin Panel → CRUD operations, pagination, search
-- ✅ **Week 20**: Testing & Deployment → Full production deployment
-
----
-
-## 🛠 Skills Implemented
-
-### Backend Skills (Month 2-3)
-
-#### Week 7: Express Basics
-- ✅ Express routes & controllers
-- ✅ Custom middleware & error handling
-- ✅ Request validation (manual)
-- ✅ RESTful API design
-- ✅ HTTP status codes & responses
-
-#### Week 9: PostgreSQL Fundamentals
-- ✅ Database schema design
-- ✅ Prisma ORM setup & migrations
-- ✅ Multi-table relationships (1-to-many)
-- ✅ Query optimization & indexing
-- ✅ Seed scripts for development
-
-#### Week 10: Authentication E2E
-- ✅ Password hashing (bcrypt)
-- ✅ JWT access tokens
-- ✅ Auth middleware
-- ✅ Role-based access control (admin)
-- ✅ API protection (CORS, Helmet)
-- ✅ Security best practices
-
-### Frontend Skills (Month 4)
-
-#### Week 13: React Fundamentals
-- ✅ Functional components with hooks
-- ✅ State management (useState)
-- ✅ Props & component composition
-- ✅ useEffect for side effects
-- ✅ Event handling
-- ✅ Conditional rendering
-
-#### Week 14: Routing and Forms
-- ✅ React Router 6 (client-side routing)
-- ✅ Protected routes implementation
-- ✅ React Hook Form (form handling)
-- ✅ Form validation (client-side)
-- ✅ Toast notifications (user feedback)
-
-#### Week 15: Start TypeScript
-- ✅ TypeScript configuration (strict mode)
-- ✅ Type component props & children
-- ✅ Type utility functions & API client
-- ✅ React-specific types (FC, ReactNode, etc.)
-- ✅ Type custom hooks
-- ✅ Interface vs Type decisions
-
-#### Week 16: Finalizing TypeScript
-- ✅ Type-safe state management (Zustand)
-- ✅ Generic types for reusable components
-- ✅ Type-safe API responses
-- ✅ Discriminated unions for status
-- ✅ Type guards & narrowing
-- ✅ Utility types (Pick, Omit, Partial)
-
-### Full-Stack Integration (Month 5)
-
-#### Week 17: Connecting Frontend & Backend
-- ✅ Axios HTTP client configuration
-- ✅ Request/response interceptors
-- ✅ CORS setup & handling
-- ✅ Environment variables
-- ✅ Error handling globally
-- ✅ Type-safe API client
-
-#### Week 18: Authentication & Authorization
-- ✅ JWT token management (localStorage)
-- ✅ Login/logout flow
-- ✅ Protected routes (frontend)
-- ✅ Auth state persistence (Zustand)
-- ✅ Token refresh strategy (manual)
-- ✅ Type-safe auth store
-
-#### Week 19: Admin Panel & Advanced Features
-- ✅ Data table with pagination
-- ✅ Search functionality
-- ✅ Filter by status
-- ✅ CRUD operations (Create, Read, Update, Delete)
-- ✅ Modal dialogs & confirmations
-- ✅ Responsive design (mobile-first)
-- ✅ Type-safe components
-
-#### Week 20: Testing & Deployment
-- ✅ Environment separation (dev/prod)
-- ✅ Production build optimization
-- ✅ Deployment configuration
-- ✅ API documentation
-- ✅ README & setup guides
-
----
-
-## ✨ Features
-
-### 🌐 Public Features (No Authentication)
-
-**Skills Applied: Week 13-14 (React Fundamentals, Forms)**
-
-- **Intake Form Submission**
-  - Clean form UI with validation
-  - Real-time error feedback
-  - Service type dropdown
-  - Budget range selection
-  - Success/error notifications
-  - Mobile responsive layout
-  - TypeScript type safety
-
-### 🔐 Admin Features (JWT Protected)
-
-**Skills Applied: Week 10, 18 (Authentication, Authorization)**
-
-- **Authentication System**
-  - JWT-based login
-  - Secure password hashing
-  - Token expiration handling
-  - Auto-logout on expiry
-  - Protected routes
-  - Type-safe auth flow
-
-**Skills Applied: Week 19 (Admin Panel)**
-
-- **Dashboard Overview**
-  - Statistics cards (React components)
-  - Recent submissions list
-  - Status indicators
-  - Quick actions
-  - Type-safe data display
-
-- **Intake Management**
-  - Paginated table view
-  - Search by name/email/service
-  - Filter by status
-  - View detailed info
-  - Update status (new → reviewed → closed)
-  - Delete submissions
-  - Type-safe CRUD operations
-
-### 🔧 Technical Implementation
-
-**Backend (Month 2-3 Skills)**
-- RESTful API with Express.js
-- PostgreSQL + Prisma ORM
-- JWT authentication & middleware
-- Bcrypt password hashing
-- CORS & Helmet security
-- Input validation
-- Error handling middleware
-- Graceful shutdown
-
-**Frontend (Month 4-5 Skills)**
-- React 18 with Hooks + TypeScript
-- Vite dev server (fast HMR)
-- React Router 6 (protected routes)
-- React Hook Form (forms)
-- Zustand (auth state) - type-safe
-- TanStack Query (server state) - type-safe
-- Tailwind CSS (styling)
-- Axios interceptors - type-safe
-- Toast notifications
-- Full TypeScript coverage
-
----
-
-## 🛠 Tech Stack
-
-### Backend (Learned in Month 2-3)
-
-| Technology | Version | Purpose | Learned In |
-|------------|---------|---------|------------|
-| **Node.js** | 18.x+ | JavaScript runtime | Week 6 |
-| **Express.js** | 4.18+ | Web framework | Week 7 |
-| **PostgreSQL** | 14+ | Database | Week 9 |
-| **Prisma ORM** | 5.x | Database ORM | Week 9 |
-| **bcrypt** | 5.x | Password hashing | Week 10 |
-| **jsonwebtoken** | 9.x | JWT auth | Week 10 |
-| **Helmet** | 7.x | Security headers | Week 10 |
-| **CORS** | 2.x | Cross-origin | Week 10 |
-| **dotenv** | 16.x | Environment variables | Week 7 |
-
-### Frontend (Learned in Month 4-5)
-
-| Technology | Version | Purpose | Learned In |
-|------------|---------|---------|------------|
-| **React** | 18.x | UI library | Week 13 |
-| **TypeScript** | 5.x | Type safety | Week 15-16 |
-| **Vite** | 5.x | Build tool | Week 13 |
-| **React Router** | 6.x | Routing | Week 14 |
-| **React Hook Form** | 7.x | Forms | Week 14 |
-| **TanStack Query** | 5.x | Server state | Week 17 |
-| **Zustand** | 4.x | Client state | Week 18 |
-| **Axios** | 1.x | HTTP client | Week 17 |
-| **Tailwind CSS** | 3.x | Styling | Week 13 |
-| **Lucide React** | 0.x | Icons | Week 13 |
-| **date-fns** | 3.x | Date formatting | Week 19 |
-
-### DevOps & Tools
-
-- **Docker** - Containerization
-- **PM2** - Process management
-- **Nginx** - Reverse proxy
-- **Git** - Version control
-- **Postman** - API testing
-- **Prisma Studio** - Database GUI
-- **ESLint** - Code linting
-- **Prettier** - Code formatting
-
----
-
-## 🏗 System Architecture
-
-**Applied Skills: Week 17-20 (Full-Stack Integration)**
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                CLIENT LAYER (Month 4 + TypeScript)               │
-│                                                                  │
-│  ┌──────────────────────┐         ┌─────────────────────────┐  │
-│  │   PUBLIC FORM        │         │   ADMIN DASHBOARD       │  │
-│  │   (Week 13-14)       │         │   (Week 18-19)          │  │
-│  │   TypeScript ✓       │         │   TypeScript ✓          │  │
-│  │                      │         │                         │  │
-│  │  - React Components  │         │  - Protected Routes     │  │
-│  │  - Form Validation   │         │  - JWT Token Mgmt       │  │
-│  │  - Toast Feedback    │         │  - CRUD Operations      │  │
-│  │  - Type-Safe Props   │         │  - Type-Safe State      │  │
-│  └──────────┬───────────┘         └─────────┬───────────────┘  │
-│             │                               │                   │
-└─────────────┼───────────────────────────────┼───────────────────┘
-              │                               │
-              │   Axios HTTP Client (Week 17) │
-              │   - Request Interceptors      │
-              │   - Response Interceptors     │
-              │   - Error Handling            │
-              │   - TypeScript Types ✓        │
-              │                               │
-       ┌──────▼───────────────────────────────▼──────┐
-       │          EXPRESS.JS API (Week 7)             │
-       │                                              │
-       │  ┌────────────────────────────────────────┐ │
-       │  │      MIDDLEWARE (Week 7, 10)           │ │
-       │  │  - CORS (Week 10)                      │ │
-       │  │  - Helmet (Week 10)                    │ │
-       │  │  - JWT Verify (Week 10)                │ │
-       │  │  - Error Handler (Week 7)              │ │
-       │  └────────────────────────────────────────┘ │
-       │                                              │
-       │  ┌────────────────────────────────────────┐ │
-       │  │      CONTROLLERS (Week 7)              │ │
-       │  │  - Business Logic                      │ │
-       │  │  - Validation                          │ │
-       │  │  - Response Formatting                 │ │
-       │  └────────────────────────────────────────┘ │
-       │                                              │
-       │  ┌────────────────────────────────────────┐ │
-       │  │      PRISMA ORM (Week 9)               │ │
-       │  │  - Type-Safe Queries                   │ │
-       │  │  - Migrations                          │ │
-       │  └────────────────────────────────────────┘ │
-       └──────┬───────────────────────────────────────┘
-              │
-       ┌──────▼──────────────────────────────────────┐
-       │      POSTGRESQL DATABASE (Week 9)            │
-       │                                              │
-       │  Tables: intake_submissions, admin_users    │
-       │  Indexes: email (for fast search)           │
-       └──────────────────────────────────────────────┘
-```
-
-### Data Flow:
-
-1. **Client Request** → User submits form or admin performs action (TypeScript validated)
-2. **Axios Client** → Type-safe HTTP request with interceptors
-3. **Express Middleware** → Security checks & JWT verification
-4. **Controllers** → Business logic & validation
-5. **Prisma ORM** → Type-safe database queries
-6. **PostgreSQL** → Data storage & retrieval
-7. **Response** → Type-safe JSON response back to client
-
----
-
-## ⚡ Quick Start
-
-### Prerequisites (Month 1-2 Setup)
-
-Make sure you have installed:
-- **Node.js** >= 18.x (Learned: Week 6)
-- **npm** >= 9.x
-- **PostgreSQL** >= 14.x (Learned: Week 9)
-- **Git** (Learned: Week 3)
-
-### Verify Installation:
-
-```bash
-node --version    # v18.x.x or higher
-npm --version     # 9.x.x or higher
-psql --version    # PostgreSQL 14.x or higher
-```
-
-### 1. Clone Repository
-
-```bash
-git clone https://github.com/yourusername/kuril-intake-client.git
-cd kuril-intake-client
-```
-
-### 2. Setup Backend (Week 9-10 Skills)
-
-```bash
-cd backend
-
-# Install dependencies
-npm install
-
-# Setup environment (Week 10)
-cp .env.example .env
-# Edit .env with your PostgreSQL credentials
-
-# Database setup (Week 9)
-npx prisma generate
-npx prisma migrate dev --name init
-
-# Seed admin user (Week 10)
-node prisma/seed.js
-
-# Start server (Week 7)
-npm run dev
-```
-
-Backend runs at: **http://localhost:5000**
-
-### 3. Setup Frontend (Week 13-16 Skills)
-
-```bash
-cd frontend
-
-# Install dependencies
-npm install
-
-# Setup environment (Week 17)
-cp .env.example .env
-# Ensure VITE_API_BASE_URL=http://localhost:5000
-
-# Start dev server (Week 13)
-npm run dev
-```
-
-Frontend runs at: **http://localhost:3000**
-
-### 4. Test Application
-
-1. **Public Form** (Week 13-14): http://localhost:3000
-   - Submit intake form
-   - Test validation
-   - Check success feedback
-
-2. **Admin Login** (Week 18): http://localhost:3000/admin/login
-   - Email: `admin@kuril.com`
-   - Password: `admin123`
-   - Test JWT authentication
-
-3. **Admin Dashboard** (Week 19): http://localhost:3000/admin/dashboard
-   - View statistics
-   - Recent submissions
-   - CRUD operations
-
----
-
-## 📁 Project Structure
-
-**Applied: Week 7, 9, 13, 15-16 (Separation of Concerns + TypeScript)**
-
-```
-kuril-intake-client/
-│
-├── backend/                        # Backend API (Node.js + Express)
+📁 Project Structure
+intaku/
+├── backend/
 │   ├── src/
-│   │   ├── controllers/            # Week 7: Business logic
-│   │   │   ├── auth.controller.js
-│   │   │   └── intake.controller.js
+│   │   ├── domains/
+│   │   │   ├── auth/
+│   │   │   │   ├── auth.routes.ts
+│   │   │   │   ├── auth.controller.ts
+│   │   │   │   ├── auth.service.ts
+│   │   │   │   ├── auth.middleware.ts
+│   │   │   │   ├── auth.validation.ts
+│   │   │   │   └── auth.types.ts
+│   │   │   │
+│   │   │   ├── users/
+│   │   │   │   ├── users.routes.ts
+│   │   │   │   ├── users.controller.ts
+│   │   │   │   ├── users.service.ts
+│   │   │   │   ├── users.repository.ts
+│   │   │   │   ├── users.validation.ts
+│   │   │   │   └── users.types.ts
+│   │   │   │
+│   │   │   ├── clients/
+│   │   │   │   ├── clients.routes.ts
+│   │   │   │   ├── clients.controller.ts
+│   │   │   │   ├── clients.service.ts
+│   │   │   │   ├── clients.repository.ts
+│   │   │   │   ├── clients.validation.ts
+│   │   │   │   └── clients.types.ts
+│   │   │   │
+│   │   │   ├── notes/
+│   │   │   │   ├── notes.routes.ts
+│   │   │   │   ├── notes.controller.ts
+│   │   │   │   ├── notes.service.ts
+│   │   │   │   ├── notes.repository.ts
+│   │   │   │   ├── notes.validation.ts
+│   │   │   │   └── notes.types.ts
+│   │   │   │
+│   │   │   ├── services/
+│   │   │   │   ├── services.routes.ts
+│   │   │   │   ├── services.controller.ts
+│   │   │   │   ├── services.service.ts
+│   │   │   │   ├── services.repository.ts
+│   │   │   │   ├── services.validation.ts
+│   │   │   │   └── services.types.ts
+│   │   │   │
+│   │   │   ├── formBuilder/
+│   │   │   │   ├── formBuilder.routes.ts
+│   │   │   │   ├── formBuilder.controller.ts
+│   │   │   │   ├── formBuilder.service.ts
+│   │   │   │   ├── formBuilder.repository.ts
+│   │   │   │   ├── formBuilder.validation.ts
+│   │   │   │   └── formBuilder.ContinueJan13types.ts
+│   │   │   │
+│   │   │   ├── branding/
+│   │   │   │   ├── branding.routes.ts
+│   │   │   │   ├── branding.controller.ts
+│   │   │   │   ├── branding.service.ts
+│   │   │   │   ├── branding.repository.ts
+│   │   │   │   ├── branding.validation.ts
+│   │   │   │   └── branding.types.ts
+│   │   │   │
+│   │   │   ├── announcements/
+│   │   │   │   ├── announcements.routes.ts
+│   │   │   │   ├── announcements.controller.ts
+│   │   │   │   ├── announcements.service.ts
+│   │   │   │   ├── announcements.repository.ts
+│   │   │   │   ├── announcements.validation.ts
+│   │   │   │   └── announcements.types.ts
+│   │   │   │
+│   │   │   ├── activityLogs/
+│   │   │   │   ├── activityLogs.routes.ts
+│   │   │   │   ├── activityLogs.controller.ts
+│   │   │   │   ├── activityLogs.service.ts
+│   │   │   │   ├── activityLogs.repository.ts
+│   │   │   │   └── activityLogs.types.ts
+│   │   │   │
+│   │   │   └── dashboard/
+│   │   │       ├── dashboard.routes.ts
+│   │   │       ├── dashboard.controller.ts
+│   │   │       ├── dashboard.service.ts
+│   │   │       └── dashboard.types.ts
 │   │   │
-│   │   ├── db/                     # Week 9: Database connection
-│   │   │   └── prisma.js           # Prisma client singleton
+│   │   ├── shared/
+│   │   │   ├── middleware/
+│   │   │   │   ├── ErrorHandler.ts
+│   │   │   │   ├── RateLimiter.ts
+│   │   │   │   ├── cors.ts
+│   │   │   │   ├── RequestLogger.ts
+|   |   |   |   ├── authentication.ts
+|   |   |   |   ├── authorization.ts
+|   |   |   |   ├── fileUpload.ts
+|   |   |   |   ├── sanitize.ts
+|   |   |   |   ├── security.ts
+|   |   |   |   ├── ipLogger.ts
+│   │   │   │   └── validation.ts
+│   │   │   │
+│   │   │   ├── utils/
+│   │   │   │   ├── jwt.ts
+│   │   │   │   ├── hash.ts
+│   │   │   │   ├── logger.ts
+|   |   |   |   ├── formatters.ts
+|   |   |   |   ├── validators.ts
+│   │   │   │   └── response.ts
+│   │   │   │
+│   │   │   └── types/
+│   │   │       ├── common.types.ts
+│   │   │       └── enums.ts
 │   │   │
-│   │   ├── middlewares/            # Week 7, 10: Middlewares
-│   │   │   ├── auth.middleware.js  # JWT verification
-│   │   │   └── error.middleware.js # Global error handler
+│   │   ├── config/
+│   │   │   ├── database.ts
+│   │   │   ├── env.ts
+│   │   │   └── constants.ts
 │   │   │
-│   │   ├── routes/                 # Week 7: API routes
-│   │   │   ├── auth.routes.js      # Auth endpoints
-│   │   │   └── intake.routes.js    # Intake endpoints
+│   │   ├── prisma/
+│   │   │   ├── schema.prisma
+│   │   │   ├── migrations/
+│   │   │   └── seed.ts
 │   │   │
-│   │   ├── utils/                  # Week 10: Utilities
-│   │   │   └── jwt.js              # JWT helpers
-│   │   │
-│   │   ├── app.js                  # Week 7: Express config
-│   │   └── server.js               # Week 7: Entry point
+│   │   ├── app.ts
+│   │   └── server.ts
 │   │
-│   ├── prisma/
-│   │   ├── schema.prisma           # Week 9: DB schema
-│   │   ├── seed.js                 # Week 9: Database seeding
-│   │   └── migrations/             # Week 9: Migration history
+│   ├── tests/
+│   │   ├── unit/
+│   │   ├── integration/
+│   │   └── setup.ts
 │   │
-│   ├── .env.example                # Environment template
+│   ├── .env.example
 │   ├── .gitignore
-│   ├── package.json                # Backend dependencies
-│   └── README.md                   # Backend documentation
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── README.md
 │
-├── frontend/                       # Frontend App (React + TypeScript + Vite)
+├── frontend/
 │   ├── src/
-│   │   ├── components/             # Week 13: Reusable UI
-│   │   │   ├── AdminLayout.tsx
-│   │   │   └── ProtectedRoute.tsx
+│   │   ├── features/
+│   │   │   ├── auth/
+│   │   │   │   ├── components/
+|   |   |   |   |   ├── AuthProvider.tsx
+│   │   │   │   │   ├── LoginForm.tsx
+│   │   │   │   │   └── ProtectedRoute.tsx
+│   │   │   │   ├── hooks/
+│   │   │   │   │   └── useAuth.ts
+│   │   │   │   ├── services/
+│   │   │   │   │   └── authService.ts
+│   │   │   │   ├── types/
+│   │   │   │   │   └── auth.types.ts
+│   │   │   │   └── utils/
+│   │   │   │       └── tokenStorage.ts
+│   │   │   │
+│   │   │   ├── clients/
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── ClientList.tsx
+│   │   │   │   │   ├── ClientCard.tsx
+│   │   │   │   │   ├── ClientDetail.tsx
+│   │   │   │   │   ├── ClientStatusBadge.tsx
+│   │   │   │   │   └── ClientFilters.tsx
+│   │   │   │   ├── hooks/
+│   │   │   │   │   └── useClients.ts
+│   │   │   │   ├── services/
+│   │   │   │   │   └── clientsService.ts
+│   │   │   │   |── types/
+│   │   │   │   |   └── clients.types.ts
+|   |   |   |   └── utils/
+│   │   │   │
+│   │   │   ├── notes/
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── NotesList.tsx
+│   │   │   │   │   ├── NoteItem.tsx
+│   │   │   │   │   └── NoteForm.tsx
+│   │   │   │   ├── hooks/
+│   │   │   │   │   └── useNotes.ts
+│   │   │   │   ├── services/
+│   │   │   │   │   └── notesService.ts
+│   │   │   │   |── types/
+│   │   │   │   |   └── notes.types.ts
+|   |   |   |   └── utils/
+│   │   │   │
+│   │   │   ├── services/
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── ServiceList.tsx
+│   │   │   │   │   ├── ServiceCard.tsx
+│   │   │   │   │   ├── ServiceForm.tsx
+│   │   │   │   │   └── ServiceManagement.tsx
+│   │   │   │   ├── hooks/
+│   │   │   │   │   └── useServices.ts
+│   │   │   │   ├── services/
+│   │   │   │   │   └── servicesService.ts
+│   │   │   │   |── types/
+│   │   │   │   |   └── services.types.ts
+|   |   |   |   └── utils/
+│   │   │   │
+│   │   │   ├── formBuilder/
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── FormBuilderPanel.tsx
+│   │   │   │   │   ├── FieldEditor.tsx
+│   │   │   │   │   └── FieldPreview.tsx
+│   │   │   │   ├── hooks/
+│   │   │   │   │   └── useFormBuilder.ts
+│   │   │   │   ├── services/
+│   │   │   │   │   └── formBuilderService.ts
+│   │   │   │   |── types/
+│   │   │   │   |   └── formBuilder.types.ts
+|   |   |   |   └── utils/
+│   │   │   │
+│   │   │   ├── branding/
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── BrandingSettings.tsx
+│   │   │   │   │   ├── ColorPicker.tsx
+│   │   │   │   │   └── ImageUploader.tsx
+│   │   │   │   ├── hooks/
+│   │   │   │   │   └── useBranding.ts
+│   │   │   │   ├── services/
+│   │   │   │   │   └── brandingService.ts
+│   │   │   │   |── types/
+│   │   │   │   |   └── branding.types.ts
+|   |   |   |   └── utils/
+│   │   │   │
+│   │   │   ├── announcements/
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── AnnouncementBanner.tsx
+│   │   │   │   │   ├── AnnouncementEditor.tsx
+│   │   │   │   │   └── AnnouncementManagement.tsx
+│   │   │   │   ├── hooks/
+│   │   │   │   │   └── useAnnouncements.ts
+│   │   │   │   ├── services/
+│   │   │   │   │   └── announcementsService.ts
+│   │   │   │   |── types/
+│   │   │   │   |   └── announcements.types.ts
+|   |   |   |   └── utils/
+│   │   │   │
+│   │   │   ├── dashboard/
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── Dashboard.tsx
+│   │   │   │   │   ├── MetricsCards.tsx
+│   │   │   │   │   ├── RecentClients.tsx
+│   │   │   │   │   ├── ActivityFeed.tsx
+│   │   │   │   │   └── StatsChart.tsx
+│   │   │   │   ├── hooks/
+│   │   │   │   │   └── useDashboard.ts
+│   │   │   │   ├── services/
+│   │   │   │   │   └── dashboardService.ts
+│   │   │   │   |── types/
+│   │   │   │   |   └── dashboard.types.ts
+|   |   |   |   └── utils/
+│   │   │   │
+│   │   │   ├── users/
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── UserList.tsx
+│   │   │   │   │   ├── RegisterForm.tsx
+│   │   │   │   │   └── UserRoleBadge.tsx
+│   │   │   │   ├── hooks/
+│   │   │   │   │   └── useUsers.ts
+│   │   │   │   ├── services/
+│   │   │   │   │   └── usersService.ts
+│   │   │   │   |── types/
+│   │   │   │   |   └── users.types.ts
+|   |   |   |   └── utils/
+│   │   │   │
+│   │   │   └── public/
+│   │   │       ├── components/
+│   │   │       │   ├── PublicIntakeForm.tsx
+│   │   │       │   ├── LandingHero.tsx
+│   │   │       │   └── SuccessMessage.tsx
+│   │   │       ├── pages/
+│   │   │       │   └── PublicIntakePage.tsx
+│   │   │       |── services/
+│   │   │       |   └── publicIntakeService.ts
+|   |   |       └── utils/
 │   │   │
-│   │   ├── hooks/                  # Week 17: Custom hooks
-│   │   │   ├── useAuth.ts          # Auth hooks
-│   │   │   └── useIntakes.ts       # Intake data hooks
+│   │   ├── shared/
+│   │   │   ├── components/
+│   │   │   │   ├── Layout/
+│   │   │   │   │   ├── Header.tsx
+│   │   │   │   │   ├── Sidebar.tsx
+│   │   │   │   │   ├── Footer.tsx
+│   │   │   │   │   └── MainLayout.tsx
+│   │   │   │   │
+│   │   │   │   ├── UI/
+│   │   │   │   │   ├── Button.tsx
+│   │   │   │   │   ├── Input.tsx
+│   │   │   │   │   ├── Select.tsx
+│   │   │   │   │   ├── Textarea.tsx
+│   │   │   │   │   ├── Table.tsx
+│   │   │   │   │   ├── Card.tsx
+│   │   │   │   │   ├── Modal.tsx
+│   │   │   │   │   ├── Badge.tsx
+│   │   │   │   │   ├── Alert.tsx
+│   │   │   │   │   ├── Tabs.tsx
+│   │   │   │   │   └── Loading.tsx
+│   │   │   │   │
+│   │   │   │   └── ErrorBoundary.tsx
+│   │   │   │
+│   │   │   ├── hooks/
+│   │   │   │   ├── useApi.ts
+│   │   │   │   ├── useLocalStorage.ts
+│   │   │   │   ├── useDebounce.ts
+│   │   │   │   └── useToast.ts
+│   │   │   │
+│   │   │   ├── utils/
+│   │   │   │   ├── apiClient.ts
+│   │   │   │   ├── formatters.ts
+│   │   │   │   ├── validators.ts
+│   │   │   │   └── constants.ts
+│   │   │   │
+│   │   │   └── types/
+│   │   │       └── common.types.ts
 │   │   │
-│   │   ├── pages/                  # Week 13-14: Pages
-│   │   │   ├── PublicForm.tsx
-│   │   │   ├── AdminLogin.tsx
-│   │   │   ├── Dashboard.tsx
-│   │   │   ├── IntakesList.tsx
-│   │   │   └── IntakeDetail.tsx
+│   │   ├── config/
+│   │   │   └── env.ts
 │   │   │
-│   │   ├── services/               # Week 17: API client
-│   │   │   ├── axios.ts            # Axios instance
-│   │   │   └── api.ts              # API functions
+│   │   ├── pages/
+│   │   │   ├── LoginPage.tsx
+│   │   │   ├── DashboardPage.tsx
+|   |   |   ├── AnnouncementsPage.tsx
+|   |   |   ├── BrandingPage.tsx
+|   |   |   ├── FormBuilderPage.tsx
+|   |   |   ├── ServicesPage.tsx
+│   │   │   ├── ClientsPage.tsx
+│   │   │   ├── ClientDetailPage.tsx
+│   │   │   ├── UsersPage.tsx
+│   │   │   ├── SettingsPage.tsx
+│   │   │   └── NotFoundPage.tsx
 │   │   │
-│   │   ├── store/                  # Week 18: State management
-│   │   │   └── authStore.ts        # Zustand auth store
+│   │   ├── routes/
+│   │   │   └── AppRoutes.tsx
+|   |   |
+|   |   ├── assets/
+|   |   |   └── react.svg
 │   │   │
-│   │   ├── types/                  # Week 15-16: TypeScript types
-│   │   │   └── index.ts            # All type definitions
-│   │   │
-│   │   ├── utils/                  # Week 16: Utilities
-│   │   │   └── helpers.ts          # Helper functions
-│   │   │
-│   │   ├── App.tsx                 # Week 13: Main component
-│   │   ├── main.tsx                # Week 13: Entry point
-│   │   ├── index.css               # Global styles
-│   │   └── vite-env.d.ts           # Week 15: Vite types
+│   │   ├── App.tsx
+│   │   ├── main.tsx
+│   │   └── index.css
 │   │
-│   ├── public/                     # Static assets
-│   ├── .env.example                # Environment template
+│   │── index.html
+│   │
+│   ├── .env.example
 │   ├── .gitignore
-│   ├── eslint.config.js            # ESLint config
-│   ├── index.html                  # HTML template
-│   ├── package.json                # Frontend dependencies
-│   ├── postcss.config.js           # PostCSS config
-│   ├── tailwind.config.js          # Tailwind config
-│   ├── tsconfig.json               # Week 15: TS config
-│   ├── tsconfig.node.json          # Week 15: Node TS config
-│   ├── vite.config.ts              # Vite configuration
-│   └── README.md                   # Frontend documentation
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── vite.config.ts
+│   ├── tailwind.config.js
+│   ├── postcss.config.js
+│   └── README.md
 │
-├── docs/                           # Additional documentation
-│   ├── API.md                      # API documentation
-│   ├── TYPESCRIPT_GUIDE.md         # TypeScript implementation guide
-│   └── ARCHITECTURE.md             # Architecture details
-│
-├── .gitignore                      # Git ignore rules
-├── LICENSE                         # MIT License
-├── CONTRIBUTING.md                 # Contribution guide
-└── README.md                       # This file
+├── .gitignore
+├── docker-compose.yml
+├── LICENSE
+└── README.md
+
+### Core Tables
+
+#### Users Table
+```prisma
+model User {
+  id            String   @id @default(uuid())
+  name          String
+  email         String   @unique
+  password      String
+  role          UserRole @default(viewer)
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  
+  internal_notes  InternalNote[]
+  activity_logs   ActivityLog[]
+
+  @@map("users")
+}
+
+enum UserRole {
+  admin      // Full access
+  assistant  // Read + comment
+  viewer     // Read only
+}
 ```
 
----
+#### Clients Table
+```prisma
+model Client {
+  id              String        @id @default(uuid())
+  name            String
+  email           String
+  business_type   String?
+  service_type    String?
+  budget          Decimal?      @db.Decimal(15, 2)
+  notes           String?       @db.Text
+  attachment_url  String?
+  form_data       Json?         // Stores dynamic form responses
+  status          ClientStatus  @default(new)
+  created_at      DateTime      @default(now())
+  updated_at      DateTime      @updatedAt
+  
+  internal_notes  InternalNote[]
+  activity_logs   ActivityLog[]
 
-## 💻 Development Guide
+  @@index([status])
+  @@index([created_at])
+  @@index([email])
+  @@map("clients")
+}
 
-### Backend Development (Week 7, 9, 10)
-
-```bash
-cd backend
-
-# Development mode (auto-restart with nodemon)
-npm run dev
-
-# Production mode
-npm start
-
-# Database operations (Week 9)
-npx prisma studio           # Open visual DB editor (localhost:5555)
-npx prisma migrate dev      # Create new migration
-npx prisma generate         # Update Prisma Client
-npx prisma migrate reset    # Reset database (careful!)
+enum ClientStatus {
+  new
+  in_progress
+  completed
+  rejected
+  archived
+}
 ```
 
-### Frontend Development (Week 13-16)
+#### Services Table
+```prisma
+model Service {
+  id              String   @id @default(uuid())
+  name            String
+  description     String   @db.Text
+  slug            String   @unique
+  min_price       Decimal  @db.Decimal(15, 2)
+  max_price       Decimal  @db.Decimal(15, 2)
+  estimated_days  Int
+  features        Json     // Array of features included
+  is_active       Boolean  @default(true)
+  display_order   Int      @default(0)
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
 
-```bash
-cd frontend
-
-# Development mode (with HMR)
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Lint code
-npm run lint
-
-# Type check
-npx tsc --noEmit
+  @@index([is_active])
+  @@index([display_order])
+  @@map("services")
+}
 ```
 
-### Code Quality
+#### FormField Table
+```prisma
+model FormField {
+  id              String    @id @default(uuid())
+  field_name      String
+  field_label     String
+  field_type      FieldType
+  placeholder     String?
+  help_text       String?
+  is_required     Boolean   @default(false)
+  options         Json?
+  validation_rules Json?
+  display_order   Int       @default(0)
+  is_active       Boolean   @default(true)
+  created_at      DateTime  @default(now())
+  updated_at      DateTime  @updatedAt
 
-#### Backend Standards:
-- Use **CommonJS** (`require`/`module.exports`)
-- Follow **MVC-like** architecture
-- Add JSDoc comments for functions
-- Handle all errors properly
-- Validate inputs before processing
-- Use meaningful variable names
+  @@index([is_active])
+  @@index([display_order])
+  @@map("form_fields")
+}
 
-#### Frontend Standards (TypeScript):
-- Use **ES6+** features and TypeScript
-- Functional components with hooks
-- Type all props, state, and functions
-- Use `interface` for objects, `type` for unions
-- Follow React best practices
-- Use Tailwind utility classes
-- Keep components small & focused
-- Extract reusable logic into custom hooks
-
-### Git Workflow
-
-```bash
-# Create feature branch
-git checkout -b feature/amazing-feature
-
-# Make changes and commit
-git add .
-git commit -m "feat: add amazing feature"
-
-# Push to your fork
-git push origin feature/amazing-feature
-
-# Open Pull Request on GitHub
+enum FieldType {
+  text
+  textarea
+  email
+  number
+  select
+  radio
+  checkbox
+  date
+  file
+}
 ```
 
----
+#### BrandingSetting Table
+```prisma
+model BrandingSetting {
+  id          String   @id @default(uuid())
+  key         String   @unique
+  value       String   @db.Text
+  category    String   // "visual", "content", "seo"
+  description String?
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
 
-## 🗺 Roadmap Integration
+  @@index([category])
+  @@map("branding_settings")
+}
+```
 
-### ✅ Completed Skills
+#### Announcements Table
+```prisma
+model Announcement {
+  id          String   @id @default(uuid())
+  title       String
+  message     String   @db.Text
+  type        String   @default("info")
+  is_active   Boolean  @default(true)
+  priority    Int      @default(0)
+  start_date  DateTime?
+  end_date    DateTime?
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
 
-**Month 3: Databases & Security**
-- [x] Week 9: PostgreSQL setup, Prisma ORM, schema design
-- [x] Week 10: JWT auth, bcrypt, middleware, RBAC
-- [x] Week 12: API documentation, deployment strategy
+  @@index([is_active])
+  @@index([priority])
+  @@map("announcements")
+}
+```
 
-**Month 4: React Core + TypeScript**
-- [x] Week 13: Components, hooks, state management
-- [x] Week 14: React Router, forms, validation
-- [x] Week 15: TypeScript setup, component typing
-- [x] Week 16: Advanced types, type-safe utilities
+#### InternalNote Table
+```prisma
+model InternalNote {
+  id          String   @id @default(uuid())
+  client_id   String
+  user_id     String
+  note        String   @db.Text
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+  
+  client      Client   @relation(fields: [client_id], references: [id], onDelete: Cascade)
+  user        User     @relation(fields: [user_id], references: [id])
 
-**Month 5: Full-Stack Development**
-- [x] Week 17: API integration, Axios setup, type-safe client
-- [x] Week 18: Auth flow, protected routes, type-safe store
-- [x] Week 19: Admin panel, CRUD operations, type-safe components
-- [x] Week 20: Production deployment, documentation
+  @@index([client_id])
+  @@index([user_id])
+  @@map("internal_notes")
+}
+```
 
-### 🚧 Next Enhancements (Future Skills)
+#### ActivityLog Table
+```prisma
+model ActivityLog {
+  id          String          @id @default(uuid())
+  user_id     String?
+  action      ActivityAction
+  target_type String?
+  target_id   String?
+  metadata    Json?
+  ip_address  String?
+  user_agent  String?
+  created_at  DateTime        @default(now())
+  
+  user        User?           @relation(fields: [user_id], references: [id])
+  client      Client?         @relation(fields: [target_id], references: [id], onDelete: Cascade)
 
-**Month 6: Advanced JavaScript & Algorithms**
-- [ ] Refactor with advanced JS patterns
-- [ ] Optimize data structures usage
-- [ ] Apply algorithm optimization
-- [ ] Advanced TypeScript patterns
+  @@index([user_id])
+  @@index([action])
+  @@index([created_at])
+  @@map("activity_logs")
+}
 
-**Month 7: Testing & CI/CD**
-- [ ] Week 25: Frontend unit tests (Jest + RTL + TypeScript)
-- [ ] Week 26: Backend integration tests
-- [ ] Week 27: GitHub Actions CI/CD with type checking
-- [ ] Week 28: Performance optimization
-
-**Month 8: Monitoring & Observability**
-- [ ] Week 30: Logging (Winston) with type-safe logs
-- [ ] Week 31: Monitoring (Sentry) with TypeScript SDK
-- [ ] Week 32: Security audit
-
-**Month 9: Capstone Project**
-- [ ] Build advanced features
-- [ ] Backend TypeScript migration (optional)
-- [ ] GraphQL with TypeScript (Week 24)
-- [ ] Real-time features
-
----
-
-## 💡 What I Learned
-
-### Backend Lessons (Month 2-3)
-
-**Week 7 - Express Basics:**
-- How to structure API routes properly
-- Middleware pattern for reusable logic
-- Error handling best practices
-- Request/response lifecycle understanding
-
-**Week 9 - PostgreSQL:**
-- Database schema design principles
-- Prisma ORM advantages over raw SQL
-- Migration workflow for version control
-- Indexing for query performance
-- One-to-many relationships
-
-**Week 10 - Authentication:**
-- Never store plain passwords (always hash with bcrypt)
-- JWT token structure and security considerations
-- Middleware pattern for route protection
-- CORS and security headers importance
-- Role-based access control implementation
-
-### Frontend Lessons (Month 4)
-
-**Week 13 - React Fundamentals:**
-- Component-based architecture benefits
-- State management with hooks
-- Props vs state differences
-- useEffect lifecycle understanding
-- Event handling patterns
-
-**Week 14 - Routing & Forms:**
-- Client-side routing advantages
-- Form validation strategies
-- Controlled vs uncontrolled inputs
-- User feedback importance (toast notifications)
-- Protected route implementation
-
-**Week 15 - Start TypeScript:**
-- Type safety catches bugs at compile time
-- Interface vs Type for props (use interface for objects)
-- Generic types for reusable components
-- TypeScript + React patterns (FC, ReactNode, etc.)
-- Type inference reduces verbosity
-
-**Week 16 - Finalizing TypeScript:**
-- Type inference saves time (don't over-type)
-- Discriminated unions for state management
-- Type guards for runtime safety
-- Utility types (Pick, Omit, Partial) are powerful
-- Strict mode catches more errors
-
-### Full-Stack Lessons (Month 5)
-
-**Week 17 - Integration:**
-- Frontend-backend communication patterns
-- Axios interceptors power for global handling
-- CORS configuration challenges
-- Environment variable management
-- Type-safe API client benefits
-
-**Week 18 - Auth Flow:**
-- Token storage strategies (localStorage)
-- Protected route implementation patterns
-- State persistence challenges
-- User experience during authentication
-- Type-safe auth store prevents errors
-
-**Week 19 - Admin Panel:**
-- Pagination necessity for large datasets
-- Search & filter UX patterns
-- CRUD operation patterns
-- Responsive design challenges
-- Type-safe components improve DX
-
-**Week 20 - Deployment:**
-- Environment separation importance
-- Production build optimization
-- SSL/TLS certificate setup
-- Database migration in production
-- Documentation is crucial
-
----
-
-## 🚀 Next Steps
-
-### Immediate (This Week)
-- [ ] Complete TypeScript migration (100% coverage)
-- [ ] Add Zod for runtime validation
-- [ ] Add email notifications (SMTP)
-- [ ] Implement file upload for attachments
-- [ ] Add more filter options
-- [ ] Improve error messages
-
-### Short Term (Month 7-8)
-- [ ] Write unit tests with TypeScript (Jest + @testing-library/react)
-- [ ] Write integration tests for API
-- [ ] Setup CI/CD pipeline with type checking
-- [ ] Add monitoring (Sentry) with TypeScript SDK
-- [ ] Performance optimization (Lighthouse audit)
-- [ ] Add request validation (Zod)
-
-### Long Term (Month 9-10)
-- [ ] Migrate backend to TypeScript (optional)
-- [ ] Add GraphQL endpoint with TypeScript (Week 24)
-- [ ] Real-time updates (WebSocket) with type-safe events
-- [ ] Advanced analytics dashboard
-- [ ] Multi-language support with type-safe i18n
-- [ ] Mobile app with React Native + TypeScript
-
----
-
-## 📚 Documentation
-
-Comprehensive documentation for each part:
-
-### Main Documentation:
-- **[ROOT README](README.md)** - This file (overview, quick start)
-- **[Backend README](backend/README.md)** - Complete backend guide
-- **[Frontend README](frontend/README.md)** - Complete frontend guide
-
-### Additional Docs:
-- **[TypeScript Guide](docs/TYPESCRIPT_GUIDE.md)** - TypeScript implementation details
-- **[API Documentation](docs/API.md)** - Detailed API endpoints
-- **[Architecture](docs/ARCHITECTURE.md)** - System design deep dive
-- **[Contributing](CONTRIBUTING.md)** - How to contribute
-- **[Changelog](CHANGELOG.md)** - Version history
-
-### Quick Links:
-- [Backend Installation](backend/README.md#-installation)
-- [Frontend Installation](frontend/README.md#-installation)
-- [TypeScript Setup](docs/TYPESCRIPT_GUIDE.md#-setup-typescript)
-- [API Endpoints](backend/README.md#-api-documentation)
-- [Environment Variables](backend/README.md#-environment-variables)
-- [Deployment Options](backend/README.md#-deployment)
-- [
+enum ActivityAction {
+  client_created
+  client_updated
+  status_changed
+  note_added
+  note_updated
+  note_deleted
+  user_created
+  user_updated
+  user_deleted
+  announcement_created
+  announcement_updated
+  settings_updated
+  service_created
+  service_updated
+  service_deleted
+  form_field_created
+  form_field_updated
+  form_field_deleted
+  branding_updated
+  login
+  logout
+}

@@ -1,42 +1,35 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# Dependencies
+node_modules/
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Build output
+dist/
+build/
 
 # Environment variables
 .env
-.env.*
-.env.development
+.env.local
 .env.production
 
 !.env.example
 
-eslint.config.js
-package-lock.json
-tsconfig.app.json
-tsconfig.spec.json
-tsconfig.json
-tsconfig.base.json
-jest.config.js
-babel.config.js
-tsconfig.node.json
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.tsbuildinfo
+.cache/
