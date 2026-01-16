@@ -1,0 +1,63 @@
+
+/* URL IMPORTS (SUCH AS FONT IMPORTS) SHOULD BE KEPT ABOVE TAILWIND IMPORTS - DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* PLEASE NOTE: THESE TAILWIND IMPORTS SHOULD NEVER BE DELETED - DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* DO NOT DELETE THESE TAILWIND IMPORTS, OTHERWISE THE STYLING WILL NOT RENDER AT ALL - DO NOT DELETE THIS COMMENT */
+
+:root {
+  /* Brand Colors - Slate & Blue */
+  --color-primary: 37 99 235; /* Blue 600 */
+  --color-primary-hover: 29 78 216; /* Blue 700 */
+  --color-secondary: 51 65 85; /* Slate 700 */
+  
+  /* Surface Colors */
+  --bg-page: 248 250 252; /* Slate 50 */
+  --bg-card: 255 255 255;
+  
+  /* Text Colors */
+  --text-primary: 15 23 42; /* Slate 900 */
+  --text-secondary: 71 85 105; /* Slate 600 */
+  --text-muted: 148 163 184; /* Slate 400 */
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-slate-900 bg-slate-50;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight text-slate-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 shadow-sm transition-all duration-200;
+  }
+  
+  .input-field {
+    @apply border-slate-200 focus:border-blue-500 focus:ring-blue-500 rounded-lg shadow-sm transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 rounded-full hover:bg-slate-300 transition-colors;
+}

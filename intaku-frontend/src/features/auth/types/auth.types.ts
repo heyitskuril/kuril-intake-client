@@ -1,0 +1,20 @@
+import { User } from '../../../src/shared/types/common.types';
+export interface AuthResponse {
+  accessToken: string;
+  refreshToken: string;
+  user: User;
+}
+export interface LoginCredentials {
+  email: string;
+  password?: string;
+}
+export interface AuthState {
+  user: User | null;
+  isAuthenticated: boolean;
+  isLoading: boolean;
+}
+export interface AuthContextType extends AuthState {
+  login: (credentials: LoginCredentials) => Promise<void>;
+  logout: () => void;
+  checkAuth: () => Promise<void>;
+}
