@@ -33,6 +33,7 @@ export const AppRoutes: React.FC = () => {
         <Route path="/settings" element={<SettingsPage />} />
       </Route>
 
+
       {/* 404 */}
       <Route path="*" element={<NotFoundPage />} />
     </Routes>;
